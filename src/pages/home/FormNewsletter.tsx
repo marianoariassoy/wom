@@ -39,11 +39,11 @@ const FormNewsletter = () => {
   return (
     <div className='row'>
       {error ? (
-        <span className='text-xl font-bold font-secondary'>Se produjo un error al enviar el mensaje</span>
+        <div className='text-xl font-bold font-secondary text-center text-primary'>
+          Se produjo un error al enviar el mensaje
+        </div>
       ) : sended ? (
-        <span className='text-xl font-bold font-secondary'>
-          ¡Su mensaje fue enviado! Gracias por contactarte con nosotros.
-        </span>
+        <div className='text-xl font-bold font-secondary text-center text-primary'>Muchas gracias por suscribirse.</div>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className='flex gap-x-3 justify-between'>
@@ -63,7 +63,9 @@ const FormNewsletter = () => {
                 />
               </div>
             </div>
-            <div>{sending ? <BeatLoader className='mt-6' /> : <Button color='bg-primary'>Suscribirse</Button>}</div>
+            <div className='w-48 flex justify-center'>
+              {sending ? <BeatLoader className='mt-6' /> : <Button color='bg-primary'>Suscribirse</Button>}
+            </div>
           </div>
         </form>
       )}

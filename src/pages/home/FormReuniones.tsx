@@ -82,7 +82,7 @@ const FormReuniones = () => {
                 {errors.email && <Error />}
               </div>
             </div>
-            <div>
+            <div className='flex justify-center w-52'>
               {sending ? <BeatLoader className='mt-6' /> : <Button color='bg-secondary-dark'>Solicitar Reunión</Button>}
             </div>
           </div>

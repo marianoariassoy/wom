@@ -1,5 +1,6 @@
 import { SocaloBottom } from '../../ui'
 import FormNewsletter from './FormNewsletter'
+import { Down } from '../../icons'
 
 const Newsletter = () => {
   return (
@@ -22,7 +23,9 @@ const Newsletter = () => {
           </div>
         </div>
 
-        <SocaloBottom color='bg-primary' />
+        <SocaloBottom color='bg-primary'>
+          <Down />
+        </SocaloBottom>
       </div>
     </section>
   )

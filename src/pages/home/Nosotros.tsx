@@ -32,8 +32,8 @@ const Nosotros = () => {
       <div className='px-6 py-12 flex items-center justify-center gap-x-4'>
         <div className='text-white font-secondary'>¡Consúltanos! Estamos para asesorarte</div>
         <a
-          href='https://wa.me/549110867777'
-          className=' text-white bg-whatsapp rounded-full transition-all h-14 text-xl aspect-square flex items-center justify-center '
+          href='https://wa.me/19546690141'
+          className=' text-white bg-whatsapp rounded-full transition-all h-14 text-xl aspect-square flex items-center justify-center shadow'
         >
           <Whatsapp />
         </a>

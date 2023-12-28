@@ -1,7 +1,7 @@
-const Select = ({ options, register, name, lan }) => {
+const Select = ({ options, register, name }) => {
   return (
     <select
-      className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+      className='select w-full bg-white rounded-2xl px-4 h-14 text-black text-sm appearance-none'
       {...register}
     >
       <option
@@ -12,7 +12,7 @@ const Select = ({ options, register, name, lan }) => {
         {name}
       </option>
       {options.map((item, index) => {
-        return <option key={index}>{lan ? item[lan].title : item}</option>
+        return <option key={index}>{item}</option>
       })}
     </select>
   )

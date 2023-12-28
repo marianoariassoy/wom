@@ -17,6 +17,10 @@
   background-size: cover;
 }
 
+#casos {
+  background-image: url('./images/bg-casosdeexito.jpg');
+}
+
 .shadow-main {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
 }
@@ -55,4 +59,11 @@
 .hover-underline-animation:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.select {
+  background-image: url('/icons/angle-down-solid.svg');
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-position: 98% center;
 }
