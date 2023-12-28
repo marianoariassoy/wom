@@ -55,8 +55,8 @@ const FormReuniones = () => {
         </span>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className='flex gap-x-3 justify-between'>
-            <div className='col grid grid-cols-3 gap-x-3 grow'>
+          <div className='flex gap-x-3 justify-between items-end lg:items-start'>
+            <div className='col grid lg:grid-cols-3 gap-3 grow'>
               <div>
                 <Input
                   type='text'

@@ -6,22 +6,40 @@ import { Back, Forward } from '../../icons'
 
 const Casosdeexito = () => {
   const sliderProperties = {
-    autoplay: false,
+    autoplay: true,
+    transitionDuration: 250,
     indicators: false,
     arrows: true,
     infinite: true,
 
     prevArrow: (
-      <div className='hover:text-black -ml-16 text-3xl text-gray'>
+      <div className='hover:text-black lg:-ml-16 text-3xl text-gray'>
         <Back />
       </div>
     ),
     nextArrow: (
-      <div className='hover:text-black -mr-16 text-3xl text-gray'>
+      <div className='hover:text-black lg:-mr-16 text-3xl text-gray'>
         <Forward />
       </div>
     )
   }
+
+  const responsiveSettings = [
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3
+      }
+    },
+    {
+      breakpoint: 500,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
 
   const data = [
     {
@@ -85,12 +103,11 @@ const Casosdeexito = () => {
   return (
     <section id='casos'>
       <div className='w-full m-auto max-w-6xl pt-20 px-6'>
-        <h1 className='font-secondary text-3xl mb-12'>Casos de éxito</h1>
+        <h1 className='font-secondary text-2xl lg:text-3xl mb-12'>Casos de éxito</h1>
         <div className='mb-20'>
           <Slide
             {...sliderProperties}
-            slidesToScroll={3}
-            slidesToShow={3}
+            responsive={responsiveSettings}
           >
             {data.map(item => (
               <ItemCasosdeexito
@@ -100,7 +117,7 @@ const Casosdeexito = () => {
             ))}
           </Slide>
         </div>
-        <SocaloBottom color='bg-tertiary' />
+        <SocaloBottom color='bg-tertiary'> </SocaloBottom>
       </div>
     </section>
   )

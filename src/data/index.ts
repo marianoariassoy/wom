@@ -1,0 +1,51 @@
+export const menu = [
+  {
+    title: 'Inversiones'
+  },
+  {
+    title: 'Nosotros'
+  },
+  {
+    title: 'Guía para el inversor'
+  },
+  {
+    title: 'Casos de éxito'
+  },
+  {
+    title: 'Contacto'
+  }
+]
+
+export const inversiones = {
+  variables: [
+    {
+      title: 'Miami'
+    },
+    {
+      title: 'Orlando'
+    },
+    {
+      title: 'Baltimore '
+    },
+    {
+      title: 'Birmingham'
+    },
+    {
+      title: 'Otros Mercados'
+    },
+    {
+      title: 'Fondo de inversión'
+    }
+  ],
+  fijas: [
+    {
+      title: 'Fondo de inversión'
+    },
+    {
+      title: 'Hipotecas'
+    },
+    {
+      title: 'Storage'
+    }
+  ]
+}

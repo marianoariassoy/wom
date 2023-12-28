@@ -3,8 +3,8 @@ import { Whatsapp } from '../icons'
 
 const Topmenu = () => {
   return (
-    <div className='bg-primary flex items-center gap-x-20 justify-end h-11 text-sm'>
-      <div className='flex gap-x-12'>
+    <div className='bg-primary items-center gap-x-20 justify-end h-11 text-sm flex'>
+      <div className='gap-x-12 hidden lg:flex'>
         <a
           href='tel:549110867777'
           className='text-light hover:text-white'

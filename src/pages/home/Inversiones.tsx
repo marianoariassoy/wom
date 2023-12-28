@@ -57,7 +57,7 @@ const Inversiones = () => {
     <section id='inversiones'>
       <div className='w-full m-auto max-w-6xl px-6'>
         <SocaloTop color='bg-primary' />
-        <div className='grid grid-cols-2 gap-8 py-20'>
+        <div className='grid lg:grid-cols-2 gap-6 py-20'>
           {items.map((item, index) => (
             <ItemIversiones
               key={index}
@@ -65,7 +65,7 @@ const Inversiones = () => {
             />
           ))}
         </div>
-        <SocaloBottom color='bg-gray' />
+        <SocaloBottom color='bg-gray'> </SocaloBottom>
       </div>
     </section>
   )

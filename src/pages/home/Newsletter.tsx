@@ -15,7 +15,7 @@ const Newsletter = () => {
             alt='Imagen de newsletter'
             className='w-full mt-6'
           />
-          <h2 className='text-2xl text-center font-secondary font-bold'>
+          <h2 className='text-xl lg:text-2xl text-center font-secondary font-bold'>
             Suscribirme para estar al día con las mejores oportunidades de inversión
           </h2>
           <div className='row mb-12'>

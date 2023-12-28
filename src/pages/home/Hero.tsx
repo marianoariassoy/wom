@@ -23,14 +23,17 @@ const Hero = () => {
       alt: ''
     }
   ]
+
   return (
     <section
       id='hero'
       className='relative h-[70vh]'
     >
       <div className='absolute z-10 w-full h-full top-1/3'>
-        <div className='m-auto max-w-6xl text-white font-secondary text-4xl text-right mt-8 font-bold'>
-          Disfruta del presente <br /> resguardando tu futuro
+        <div className='m-auto max-w-6xl mt-8 font-bold px-6 flex justify-end'>
+          <h1 className='text-white font-secondary text-3xl lg:text-4xl text-wrap max-w-lg text-right '>
+            Disfruta del presente resguardando tu futuro
+          </h1>
         </div>
       </div>
 
@@ -52,7 +55,7 @@ const Hero = () => {
       </div>
 
       <div className='absolute w-full bottom-0 z-10'>
-        <div className='max-w-6xl m-auto'>
+        <div className='max-w-6xl m-auto px-6'>
           <SocaloBottom color='bg-white'> </SocaloBottom>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { menu } from '../data/data'
+import { menu } from '../data'
 import { useDataContext } from '../context/useDataContext'
 import { Link, useLocation } from 'wouter'
 

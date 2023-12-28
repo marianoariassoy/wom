@@ -6,12 +6,13 @@ const Footer = () => {
       <img
         src={Logo}
         alt='Logo'
+        className='w-24 lg:w-auto'
       />
-      <div className='flex gap-x-3'>
+      <div className='flex flex-col lg:flex-row gap-3 text-center'>
         <span>&copy; Copyright 2024</span>
-        <span>|</span>
+        <span className='hidden lg:block'>|</span>
         <span>Todos los derechos reservados</span>
-        <span>|</span>
+        <span className='hidden lg:block'>|</span>
         <span>
           <a
             href='#'

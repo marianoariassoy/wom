@@ -10,10 +10,10 @@ const Guia = () => {
       className='bg-gray'
     >
       <div className='w-full m-auto max-w-6xl px-6 pt-6'>
-        <h1 className='text-3xl text-primary font-secondary text-center mb-16'>Guía para el inversor</h1>
+        <h1 className='text-2xl lg:text-3xl text-primary font-secondary text-center mb-16'>Guía para el inversor</h1>
 
         <article className='flex items-center'>
-          <div className='col lg:w-2/5 relative'>
+          <div className='col lg:w-2/5 relative hidden lg:block'>
             <div className='overflow-hidden aspect-[5/4]'>
               <img
                 src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
@@ -22,13 +22,13 @@ const Guia = () => {
               />
             </div>
           </div>
-          <div className='col lg:w-3/5 pr-20'>
+          <div className='col lg:w-3/5 lg:pr-20'>
             <div className='w-full shadow-main rounded-tl-3xl flex flex-col bg-white overflow-hidden pb-14'>
-              <div className='bg-primary text-white pl-28 pr-6 py-8'>
+              <div className='bg-primary text-white px-6 lg:pl-28 py-8'>
                 <h1 className='text-xl font-secondary mb-3'>¿Cómo invertir?</h1>
                 <p className='text-sm'>Adquiere tu inmueble en Estados Unidos en forma sencilla</p>
               </div>
-              <div className='pl-28 pt-12 pr-6'>
+              <div className='px-6 lg:pl-28 pt-12'>
                 <div className='flex items-center gap-x-3 mb-6'>
                   {numbers.map(number => (
                     <button

@@ -12,15 +12,16 @@ const Header = () => {
   return (
     <div className='w-full'>
       <div className='max-w-6xl m-auto px-6 flex justify-between'>
-        <div className='bg-white py-4 px-14'>
+        <div className='bg-white pb-6 lg:pb-0 pt-4 px-10 lg:px-14 absolute'>
           <a href='#'>
             <img
               src={Logo}
               alt='Logo'
+              className='w-24 lg:w-auto'
             />
           </a>
         </div>
-        <div>
+        <div className='w-full'>
           <Topmenu />
           <Nav />
         </div>

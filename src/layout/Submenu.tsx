@@ -1,22 +1,31 @@
-import { Link } from 'wouter'
+// import { Link } from 'wouter'
+import { inversiones } from '../data'
 
-const Submenu = ({ lan, menu, location, pos }) => {
+const Submenu = () => {
   return (
-    <div className='absolute submenu hidden top-6 uppercase text-sm'>
-      <div className='bg-primary mt-3 p-4 text-center flex flex-col gap-y-3 text-sm font-bold [&>a:last-child]:border-0 [&>a:last-child]:p-0'>
-        {menu[pos][lan].categories.map((data, index) => (
-          <Link
-            href={data.url}
+    <div className='absolute text-sm bg-white p-6 pr-12 -ml-6 pt-10 hidden submenu'>
+      <div className='flex flex-col gap-y-1 mb-6'>
+        <h2 className='text-secondary font-semibold uppercase'>Renta Variable</h2>
+        {inversiones.variables.map((data, index) => (
+          <a
+            href='#'
             key={index}
+            className='hover:text-black/50'
           >
-            <a
-              className={`border-b pb-3 border-black text-secondary ${
-                location === data.url ? 'opacity-60' : 'hover:opacity-60'
-              }`}
-            >
-              {data.title}
-            </a>
-          </Link>
+            {data.title}
+          </a>
+        ))}
+      </div>
+      <div className='flex flex-col gap-y-1'>
+        <h2 className='text-light font-semibold uppercase'>Renta Variable</h2>
+        {inversiones.fijas.map((data, index) => (
+          <a
+            href='#'
+            key={index}
+            className='hover:text-black/50'
+          >
+            {data.title}
+          </a>
         ))}
       </div>
     </div>

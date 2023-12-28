@@ -47,8 +47,10 @@ const Porqueinvertir = () => {
       className='relative'
     >
       <div className='w-full m-auto max-w-6xl pt-20 px-6'>
-        <h1 className='text-white text-center font-secondary text-3xl mb-12 font-bold'>¿Por qué invertir en EE.UU.?</h1>
-        <div className='grid grid-cols-3 gap-8 mb-20'>
+        <h1 className='text-white text-center font-secondary text-2xl lg:text-3xl mb-12 font-bold'>
+          ¿Por qué invertir en EE.UU.?
+        </h1>
+        <div className='grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6 mb-20'>
           {items.map((item, index) => (
             <ItemPorqueinvertir
               key={index}
@@ -56,7 +58,7 @@ const Porqueinvertir = () => {
             />
           ))}
         </div>
-        <SocaloBottom color='bg-primary' />
+        <SocaloBottom color='bg-primary'> </SocaloBottom>
       </div>
     </section>
   )

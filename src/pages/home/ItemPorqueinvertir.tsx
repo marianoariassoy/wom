@@ -9,11 +9,11 @@ interface Props {
 const ItemPorqueinvertir = ({ data }: Props) => {
   return (
     <article className='bg-white rounded-bl-3xl flex flex-col gap-y-4 pb-6'>
-      <div className={`${data.color} px-8 py-3 flex items-center justify-between`}>
+      <div className={`${data.color} px-6 py-3 flex items-center justify-between gap-x-3`}>
         <h2 className='text-white font-secondary'>{data.title}</h2>
         <img src={data.icon} />
       </div>
-      <div className='px-8 text-sm text-gray overflow-y-auto text-wrap h-40'>{data.text}</div>
+      <div className='px-6 text-sm text-gray overflow-y-auto text-wrap h-40'>{data.text}</div>
     </article>
   )
 }

@@ -6,7 +6,7 @@ const Nosotros = () => {
       id='nosotros'
       className='bg-primary text-white'
     >
-      <div className='w-full m-auto max-w-6xl pt-12 px-6 flex gap-x-6'>
+      <div className='w-full m-auto max-w-6xl pt-12 px-6 flex flex-col lg:flex-row gap-x-6'>
         <div className='col lg:w-2/5 lg:pr-12'>
           <img
             src='./images/nosotros.png'
@@ -15,7 +15,7 @@ const Nosotros = () => {
           />
         </div>
         <div className='col lg:w-3/5 flex flex-col gap-y-6 pr-6 lg:pt-6'>
-          <h1 className='text-white font-secondary text-3xl font-bold'>Nosotros</h1>
+          <h1 className='text-white font-secondary text-2xl lg:text-3xl font-bold'>Nosotros</h1>
           <p className='text-wrap text-sm'>
             Somos una empresa con más de diez años de trayectoria, orientada a la generación de oportunidades de
             negocios, apoyando a nuestros clientes en el cumplimiento de sus metas a lo largo de todo el proceso. <br />
