@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-3e840027-2190-4bf0-b78e-b791552fa051" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width="23.1" height="30.7" viewBox="0 0 23.1 30.7">
+  <defs>
+    <style>
+      .uuid-8f77439a-db73-42ca-873b-521f9b70ba7d {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="uuid-906c4d75-89c6-4486-88e9-9d5eee6bc67a" data-name="Capa 1">
+    <g id="uuid-09e36811-17d8-4609-ba37-2b732cb5b922" data-name="Security">
+      <path class="uuid-8f77439a-db73-42ca-873b-521f9b70ba7d" d="M11.5,0L0,5v12.4s.7,8.6,11.5,13.4c10.9-4.8,11.5-13.4,11.5-13.4V5L11.5,0Zm9.2,16.9s-.5,6.8-9.2,10.6C2.9,23.8,2.4,16.9,2.4,16.9V7.1L11.5,3.1l9.2,4v9.8Z"/>
+      <polygon class="uuid-8f77439a-db73-42ca-873b-521f9b70ba7d" points="9.5 21 19.9 12 18.4 10.2 9.7 17.6 6.1 13.6 4.3 15.2 9.5 21 9.5 21 9.5 21 9.5 21 9.5 21"/>
+    </g>
+  </g>
+</svg>

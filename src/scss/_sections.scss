@@ -1,0 +1,58 @@
+.destacadas-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  height: 70vh;
+
+  article:first-child {
+    grid-row: span 2;
+    grid-column: span 1;
+  }
+}
+
+#porque {
+  background-image: url('./images/bg-usa.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.shadow-main {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+}
+
+.indicators {
+  position: absolute;
+  width: 100%;
+  bottom: 0.8rem;
+  li {
+    margin: 0 0.3rem !important;
+    z-index: 3000 !important;
+  }
+}
+
+.hover-underline-animation {
+  position: relative;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: currentColor;
+  transform-origin: bottom left;
+  transition: transform 0.2s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

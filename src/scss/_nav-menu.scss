@@ -1,0 +1,20 @@
+.nav-menu {
+  cursor: pointer;
+  width: 40px;
+}
+.nav-menu > span {
+  background-color: currentColor;
+  display: block;
+  height: 3px;
+  width: 40px;
+}
+.nav-menu > span:not(:last-child) {
+  margin-bottom: 8px;
+}
+.nav-menu,
+.nav-menu > span {
+  transition: all 0.3s ease;
+}
+.nav-menu.active > span {
+  opacity: 0.6;
+}
