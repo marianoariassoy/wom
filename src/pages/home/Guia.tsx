@@ -6,7 +6,7 @@ const Guia = () => {
 
   return (
     <section
-      id='guia'
+      id='guía'
       className='bg-gray'
     >
       <div className='w-full m-auto max-w-6xl px-6 pt-6'>

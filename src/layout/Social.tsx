@@ -3,22 +3,22 @@ import { Instagram, Facebook, Linkedin, Twitter } from '../icons'
 const items = [
   {
     name: 'Instagram',
-    url: 'https://www.instagram.com',
+    url: 'https://www.instagram.com/womlatam/',
     icon: Instagram
   },
   {
     name: 'Facebook',
-    url: 'https://www.facebook.com',
+    url: 'https://www.facebook.com/womlatam',
     icon: Facebook
   },
   {
     name: 'Linkedin',
-    url: 'https://www.linkedin.com',
+    url: 'https://www.linkedin.com/company/wom-latam/about/',
     icon: Linkedin
   },
   {
     name: 'Twitter',
-    url: 'https://www.twitter.com',
+    url: 'https://twitter.com/#!/WomLatam',
     icon: Twitter
   }
 ]

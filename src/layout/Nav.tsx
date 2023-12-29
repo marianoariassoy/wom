@@ -15,9 +15,9 @@ const Nav = () => {
           index > 0 ? (
             <li className='border-r pr-5'>
               <a
-                href={data.title}
+                href={`#${data.title.toLowerCase().split(' ')[0]}`}
                 key={index}
-                className='hover:opacity-50 uppercase transition-colors'
+                className='hover:opacity-50 uppercase transition-colors scroll'
               >
                 {data.title}
               </a>
@@ -25,9 +25,9 @@ const Nav = () => {
           ) : (
             <li className='border-r pr-5 show-submenu'>
               <a
-                href={data.title}
+                href={`#${data.title.toLowerCase().split(' ')[0]}`}
                 key={index}
-                className='hover:opacity-50 transition-colors uppercase flex items-center gap-x-2'
+                className='hover:opacity-50 transition-colors uppercase flex items-center gap-x-2 scroll'
               >
                 {data.title}
                 <Down />

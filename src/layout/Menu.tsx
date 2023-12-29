@@ -1,57 +1,41 @@
 import { menu } from '../data'
-import { useDataContext } from '../context/useDataContext'
-import { Link, useLocation } from 'wouter'
 
 const Menu = () => {
-  const { lan } = useDataContext()
-  const [location] = useLocation()
-
   const closeMenu = () => {
     document.querySelector('.nav-menu')?.classList.toggle('active')
     document.querySelector('.menu-mobile')?.classList.toggle('hidden')
   }
 
   return (
-    <section className='menu-mobile fixed top-0 fade-in h-screen w-full bg-secondary -z-10 hidden'>
-      <div className='grid content-center w-full h-full text-center text-white'>
-        <nav
-          onClick={closeMenu}
-          className=''
-        >
-          <ul className='flex flex-col text-3xl font-bold gap-y-2'>
-            {menu.map(data => (
-              <li
-                key={data.id}
-                className='flex flex-col gap-y-2'
-              >
-                <Link href={data.url}>
-                  <a className={`underline-offset-4 ${location === data.url ? 'underline' : ''}`}>{data[lan].title}</a>
-                </Link>
-                {data.id === 2 &&
-                  data[lan].categories.map(category => (
-                    <Link
-                      href={category.url}
-                      key={category.id}
-                    >
-                      <a className={`underline-offset-4 ${location === category.url ? 'underline' : ''}`}>
-                        {category.title}
-                      </a>
-                    </Link>
-                  ))}
-                {data.id === 4 &&
-                  data[lan].categories.map(category => (
-                    <Link
-                      href={category.url}
-                      key={category.id}
-                    >
-                      <a className={`underline-offset-4 ${location === category.url ? 'underline' : ''}`}>
-                        {category.title}
-                      </a>
-                    </Link>
-                  ))}
+    <section className='menu-mobile fixed top-0 left-0 fade-in h-screen w-screen bg-white z-40 text-primary hidden'>
+      <div className='grid content-center w-full h-full text-center'>
+        <nav onClick={closeMenu}>
+          <ul className='flex flex-col text-2xl font-medium gap-y-2'>
+            {menu.map((data, index) => (
+              <li key={index}>
+                <a
+                  href={`#${data.title.toLowerCase().split(' ')[0]}`}
+                  className='scroll'
+                >
+                  {data.title}
+                </a>
               </li>
             ))}
           </ul>
+          <div className='flex flex-col gap-y-3 mt-12'>
+            <a
+              href='tel:549110867777'
+              className='text-light hover:text-white'
+            >
+              ARG 54911 0867777
+            </a>
+            <a
+              href='tel:305624098'
+              className='text-light hover:text-white'
+            >
+              USA 305 624098
+            </a>
+          </div>
         </nav>
       </div>
     </section>

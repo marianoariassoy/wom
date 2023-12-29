@@ -13,11 +13,14 @@ const Header = () => {
     <div className='w-full'>
       <div className='max-w-6xl m-auto px-6 flex justify-between'>
         <div className='bg-white pb-6 lg:pb-0 pt-4 px-10 lg:px-14 absolute'>
-          <a href='#'>
+          <a
+            href='#hero'
+            className='scroll'
+          >
             <img
               src={Logo}
               alt='Logo'
-              className='w-24 lg:w-auto'
+              className='w-24 lg:w-auto hover:opacity-75 transition-all'
             />
           </a>
         </div>

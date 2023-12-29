@@ -24,13 +24,13 @@ const FormReuniones = () => {
   const onSubmit = (data: Inputs) => {
     setSending(true)
     const sender = {
-      to: 'australclimatizacion.ing@gmail.com',
-      from: 'no-reply@australclimatizacion.com',
-      from_name: 'Austral Ingeniería',
-      subject: 'Contacto'
+      to: ' ',
+      from: ' ',
+      from_name: 'WOM Latam',
+      subject: 'Solicitud de Reunión'
     }
 
-    axios.post('http://australclimatizacion.com/backend/send-email.php', { ...data, ...sender }).then(data => {
+    axios.post('', { ...data, ...sender }).then(data => {
       if (data.data === 'success') {
         setSended(true)
         setSending(false)

@@ -5,7 +5,9 @@ import { useForm } from 'react-hook-form'
 import BeatLoader from 'react-spinners/BeatLoader'
 
 interface Inputs {
+  oportunidad: string
   name: string
+  phone: string
   email: string
   message: string
 }
@@ -24,13 +26,13 @@ const FormContacto = () => {
   const onSubmit = (data: Inputs) => {
     setSending(true)
     const sender = {
-      to: 'australclimatizacion.ing@gmail.com',
-      from: 'no-reply@australclimatizacion.com',
-      from_name: 'Austral Ingeniería',
+      to: ' ',
+      from: ' ',
+      from_name: 'WOM Latam',
       subject: 'Contacto'
     }
 
-    axios.post('http://australclimatizacion.com/backend/send-email.php', { ...data, ...sender }).then(data => {
+    axios.post('', { ...data, ...sender }).then(data => {
       if (data.data === 'success') {
         setSended(true)
         setSending(false)
