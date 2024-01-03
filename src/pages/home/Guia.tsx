@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'wouter'
 import Image from '../../components/Image'
 import { Back, Forward } from '../../icons'
 
@@ -111,12 +112,9 @@ const Guia = () => {
       </div>
       <div className='px-6 py-12 flex items-center justify-center gap-x-4'>
         <div className='text-primary font-secondary'>Consulta nuestras preguntas frecuentes</div>
-        <a
-          href='#'
-          className=' text-white bg-secondary transition-all py-3 px-7 rounded-br-3xl hover:bg-black'
-        >
-          FAQs
-        </a>
+        <Link href='/faqs'>
+          <a className='text-white bg-secondary transition-all py-3 px-7 rounded-br-3xl hover:bg-black'>FAQs</a>
+        </Link>
       </div>
     </section>
   )

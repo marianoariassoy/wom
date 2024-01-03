@@ -1,3 +1,4 @@
+import { HeadProvider, Title } from 'react-head'
 import Layout from '../../layout/Layout'
 import Casosdeexito from './Casosdeexito'
 import Contacto from './Contacto'
@@ -23,6 +24,9 @@ const index = () => {
       <Casosdeexito />
       <Newsletter />
       <Contacto />
+      <HeadProvider>
+        <Title>WOM Latam</Title>
+      </HeadProvider>
     </Layout>
   )
 }

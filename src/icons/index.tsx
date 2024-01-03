@@ -112,3 +112,16 @@ export const Forward = () => {
     </svg>
   )
 }
+
+export const DownBig = () => {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='56.3'
+      height='23.4'
+      viewBox='0 0 56.3 23.4'
+    >
+      <polygon points='55 .3 28.3 21 1.3 0 0 1.3 28.1 23.4 56.3 1.5 55 .3' />
+    </svg>
+  )
+}

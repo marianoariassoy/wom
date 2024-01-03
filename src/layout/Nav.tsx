@@ -1,8 +1,11 @@
+import { Link, useLocation } from 'wouter'
 import { menu } from '../data'
 import { Down } from '../icons'
 import Submenu from './Submenu'
 
 const Nav = () => {
+  const [location] = useLocation()
+
   const OpenMenu = () => {
     document.querySelector('.nav-menu')?.classList.toggle('active')
     document.querySelector('.menu-mobile')?.classList.toggle('hidden')
@@ -14,13 +17,14 @@ const Nav = () => {
         {menu.map((data, index) =>
           index > 0 ? (
             <li className='border-r pr-5'>
-              <a
-                href={`#${data.title.toLowerCase().split(' ')[0]}`}
-                key={index}
-                className='hover:opacity-50 uppercase transition-colors scroll'
-              >
-                {data.title}
-              </a>
+              <Link href={`${location === '/' ? '#' + data.title.toLowerCase().split(' ')[0] : '/'}`}>
+                <a
+                  key={index}
+                  className={`hover:opacity-50 uppercase transition-colors ${location === '/' ? 'scroll' : ''}`}
+                >
+                  {data.title}
+                </a>
+              </Link>
             </li>
           ) : (
             <li className='border-r pr-5 show-submenu'>
