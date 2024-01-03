@@ -26,13 +26,13 @@ const items = [
 const Social = () => {
   return (
     <nav className='flex gap-x-4 lg:gap-x-8 items-center'>
-      {items.map(item => (
+      {items.map((item, index) => (
         <a
-          key={item.name}
+          key={index}
           href={item.url}
           target='_blank'
           rel='noreferrer'
-          className='hover-light transition-colors'
+          className='text-light-hover transition-colors'
         >
           <item.icon />
         </a>

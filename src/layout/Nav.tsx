@@ -16,7 +16,10 @@ const Nav = () => {
       <ul className='hidden lg:flex items-center gap-x-5 [&>li:last-child]:border-0 [&>li:last-child]:p-0 font-medium text-sm pb-2'>
         {menu.map((data, index) =>
           index > 0 ? (
-            <li className='border-r pr-5'>
+            <li
+              className='border-r pr-5'
+              key={index}
+            >
               <Link href={`${location === '/' ? '#' + data.title.toLowerCase().split(' ')[0] : '/'}`}>
                 <a
                   key={index}
@@ -27,7 +30,10 @@ const Nav = () => {
               </Link>
             </li>
           ) : (
-            <li className='border-r pr-5 show-submenu'>
+            <li
+              className='border-r pr-5 show-submenu'
+              key={index}
+            >
               <a
                 href={`#${data.title.toLowerCase().split(' ')[0]}`}
                 key={index}

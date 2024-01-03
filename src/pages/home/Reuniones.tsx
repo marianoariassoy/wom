@@ -14,6 +14,7 @@ const Reuniones = () => {
       text: 'Acompañamiento en todo el proceso de compra, administración y posterior venta'
     }
   ]
+
   return (
     <section
       id='reuniones'

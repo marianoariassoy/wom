@@ -100,7 +100,7 @@ const Destacadas = () => {
           <h1 className='text-2xl lg:text-3xl text-secondary font-secondary font-bold'>Inversiones destacadas</h1>
           <a
             href='#destacadas'
-            className='text-black/25 text-5xl scroll'
+            className='text-black/25 text-5xl scroll hover:text-black'
           >
             <DownBig />
           </a>

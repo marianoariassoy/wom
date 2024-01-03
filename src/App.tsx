@@ -12,7 +12,11 @@ function App() {
         component={Home}
       />
       <Route
-        path='/inversiones'
+        path='/renta-variable/:title'
+        component={Inversiones}
+      />
+      <Route
+        path='/renta-fija/:title'
         component={Inversiones}
       />
       <Route

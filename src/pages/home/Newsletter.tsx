@@ -1,6 +1,6 @@
 import { SocaloBottom } from '../../ui'
 import FormNewsletter from './FormNewsletter'
-import { Down } from '../../icons'
+import { DownBig } from '../../icons'
 
 const Newsletter = () => {
   return (
@@ -11,7 +11,7 @@ const Newsletter = () => {
       <div className='w-full m-auto max-w-6xl px-6'>
         <div className='row m-auto max-w-3xl flex flex-col gap-y-12 justify-center mb-6'>
           <img
-            src='./images/newsletter.svg'
+            src='/images/newsletter.svg'
             alt='Imagen de newsletter'
             className='w-full mt-6'
           />
@@ -24,7 +24,7 @@ const Newsletter = () => {
         </div>
 
         <SocaloBottom color='bg-primary'>
-          <Down />
+          <DownBig />
         </SocaloBottom>
       </div>
     </section>

@@ -15,7 +15,7 @@ const ItemFaqs = ({ data, show, setActive, index }: Props) => {
       } `}
       onClick={() => setActive(index)}
     >
-      <div className='flex justify-between gap-x-4 items-start'>
+      <div className='flex justify-between gap-x-4 items-center'>
         <h1 className='font-secondary font-bold'>{data.title}</h1>
         <button className='text-3xl'>{show ? '-' : '+'}</button>
       </div>
