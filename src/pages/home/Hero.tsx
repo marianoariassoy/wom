@@ -8,19 +8,19 @@ const Hero = () => {
       id: 1,
       image:
         'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-      alt: ''
+      title: 'Disfruta del presente resguardando tu futuro'
     },
     {
       id: 1,
       image:
         'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-      alt: ''
+      title: 'Title 2'
     },
     {
       id: 1,
       image:
         'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-      alt: ''
+      title: 'Title 3'
     }
   ]
 
@@ -29,20 +29,12 @@ const Hero = () => {
       id='hero'
       className='relative h-[70vh]'
     >
-      <div className='absolute z-10 w-full h-full top-1/3'>
-        <div className='m-auto max-w-6xl mt-8 font-bold px-6 flex justify-end'>
-          <h1 className='text-white font-secondary text-3xl lg:text-4xl text-wrap max-w-lg text-right '>
-            Disfruta del presente resguardando tu futuro
-          </h1>
-        </div>
-      </div>
-
       <Slider data={data} />
 
       <div className='fixed flex items-center gap-x-3 bottom-12 right-6 z-40'>
         <a
           href='https://wa.me/19546690141'
-          className='bg-white py-3 px-6 text-gray text-sm rounded-full shadow hover:bg-gray-100 transition-colors'
+          className='bg-white py-3 px-6 text-gray text-sm rounded-full shadow hover:text-white bg-secondary-hover transition-colors'
         >
           Click aquí para chatear
         </a>
