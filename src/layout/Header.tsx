@@ -1,16 +1,10 @@
-import { useEffect } from 'react'
 import { Link, useLocation } from 'wouter'
-import scroll from '../utils/scroll'
 import Nav from './Nav'
 import Topmenu from './Topmenu'
 import Logo from '../assets/images/logo.svg'
 
 const Header = () => {
   const [location] = useLocation()
-
-  useEffect(() => {
-    scroll()
-  }, [])
 
   return (
     <div className='w-full'>

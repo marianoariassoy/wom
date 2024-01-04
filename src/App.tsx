@@ -12,6 +12,22 @@ function App() {
         component={Home}
       />
       <Route
+        path='/contacto'
+        component={Home}
+      />
+      <Route
+        path='/casos'
+        component={Home}
+      />
+      <Route
+        path='/guia'
+        component={Home}
+      />
+      <Route
+        path='/nosotros'
+        component={Home}
+      />
+      <Route
         path='/renta-variable/:title'
         component={Inversiones}
       />

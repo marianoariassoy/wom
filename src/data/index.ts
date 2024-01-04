@@ -6,10 +6,10 @@ export const menu = [
     title: 'Nosotros'
   },
   {
-    title: 'Guía para el inversor'
+    title: 'Guia para el inversor'
   },
   {
-    title: 'Casos de éxito'
+    title: 'Casos de exito'
   },
   {
     title: 'Contacto'

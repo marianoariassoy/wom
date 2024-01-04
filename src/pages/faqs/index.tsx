@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { HeadProvider, Title } from 'react-head'
 import Layout from '../../layout/Layout'
 import { SocaloBottom } from '../../ui'
@@ -8,8 +8,6 @@ import Contacto from '../home/Contacto'
 import Newsletter from '../home/Newsletter'
 
 const Index = () => {
-  const [active, setActive] = useState()
-
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -65,9 +63,6 @@ const Index = () => {
               <ItemFaqs
                 key={index}
                 data={item}
-                index={index}
-                show={active === index ? true : false}
-                setActive={setActive}
               />
             ))}
           </div>

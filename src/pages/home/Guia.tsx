@@ -51,7 +51,7 @@ const Guia = () => {
 
   return (
     <section
-      id='guía'
+      id='guia'
       className='bg-gray'
     >
       <div className='w-full m-auto max-w-6xl px-6 pt-6 relative'>
