@@ -1,5 +1,5 @@
 import { SocaloBottom } from '../../ui'
-import { Whatsapp } from '../../icons'
+import { Whatsapp } from '../../components/icons'
 import Slider from './Slider'
 import useFetch from '../../hooks/useFetch'
 

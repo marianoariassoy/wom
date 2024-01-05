@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react'
-const apiUrl = 'http://localhost/sites/wom-backend/api'
+const apiUrl = 'https://marianoarias.soy/sites/wom-backend/api'
 import axios from 'axios'
 
-type Data = string
-
-function useFetch(url: Data) {
+function useFetch(url: string) {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error] = useState(null)

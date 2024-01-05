@@ -1,6 +1,6 @@
 import { SocaloBottom } from '../../ui'
 import FormNewsletter from './FormNewsletter'
-import { DownBig } from '../../icons'
+import { DownBig } from '../../components/icons'
 
 const Newsletter = () => {
   return (

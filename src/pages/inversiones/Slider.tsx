@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
-import { Back, Forward } from '../../icons'
+import { Back, Forward } from '../../components/icons'
 import ItemSlider from './ItemSlider'
 import Modal from './Modal'
 import useFetch from '../../hooks/useFetch'

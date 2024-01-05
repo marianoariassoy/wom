@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'wouter'
 import { menu } from '../data'
-import { Down } from '../icons'
+import { Down } from '../components/icons'
 import Submenu from './Submenu'
 
 const Nav = () => {

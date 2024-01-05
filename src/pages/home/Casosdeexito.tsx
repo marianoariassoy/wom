@@ -2,7 +2,7 @@ import { SocaloBottom } from '../../ui'
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 import ItemCasosdeexito from './ItemCasosdeexito'
-import { Back, Forward } from '../../icons'
+import { Back, Forward } from '../../components/icons'
 import useFetch from '../../hooks/useFetch'
 import Loader from '../../components/Loader'
 

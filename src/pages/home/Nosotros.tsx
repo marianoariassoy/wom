@@ -1,4 +1,4 @@
-import { Whatsapp } from '../../icons'
+import { Whatsapp } from '../../components/icons'
 
 const Nosotros = () => {
   return (

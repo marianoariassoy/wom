@@ -17,7 +17,7 @@ const Inversiones = () => {
           <section className='py-20 flex flex-col gap-y-6'>
             <div className='grid lg:grid-cols-2 gap-6 '>
               {data
-                .filter(item => item.type === 1 && item.title != 'Fondo de inversión')
+                .filter(item => +item.type === 1 && item.title != 'Fondo de inversión')
                 .map((item, index) => (
                   <ItemIversiones
                     key={index}
@@ -30,7 +30,7 @@ const Inversiones = () => {
             </div>
             <div className='grid lg:grid-cols-2 gap-6 '>
               {data
-                .filter(item => item.type === 2 && item.title != 'Fondo de inversión')
+                .filter(item => +item.type === 2 && item.title != 'Fondo de inversión')
                 .map((item, index) => (
                   <ItemIversiones
                     key={index}

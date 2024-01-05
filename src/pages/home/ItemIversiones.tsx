@@ -14,7 +14,7 @@ interface Props {
 }
 
 const ItemIversiones = ({ data: { id, title, type, rentability, from, image } }: Props) => {
-  const url = `${type === 1 ? '/renta-variable' : '/reanta-fija'}/${sanitizeTitleForURL(title)}/${id}`
+  const url = `${type === 1 ? '/renta-variable' : '/renta-fija'}/${sanitizeTitleForURL(title)}/${id}`
 
   return (
     <article className='grid grid-cols-2 rounded-bl-3xl overflow-hidden shadow-main h-[300px] gap-x-3'>
@@ -25,7 +25,7 @@ const ItemIversiones = ({ data: { id, title, type, rentability, from, image } }:
         >
           +
         </a>
-        <div className='aspect-[4-5]'>
+        <div className='aspect-[4-5] h-fulll'>
           <Image
             src={image}
             alt={title}

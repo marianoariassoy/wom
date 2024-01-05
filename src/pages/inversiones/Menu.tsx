@@ -15,7 +15,7 @@ const Menu = () => {
         <h2 className='font-semibold p-4 bg-secondary text-white w-full lg:w-64 lg:px-12 mb-6'>RENTA VARIABLE</h2>
         <nav className='flex flex-col gap-y-3 uppercase text-gray font-medium'>
           {data
-            .filter(item => item.type === 1)
+            .filter(item => +item.type === 1)
             .map((data, index) => (
               <Link
                 href={`/renta-variable/${sanitizeTitleForURL(data.title)}/${data.id}`}
@@ -37,7 +37,7 @@ const Menu = () => {
         <h2 className='font-semibold p-4 bg-light text-white w-full lg:w-64 lg:px-12 mb-6'>RENTA FIJA</h2>
         <nav className='flex flex-col gap-y-3 uppercase text-gray font-medium'>
           {data
-            .filter(item => item.type === 2)
+            .filter(item => +item.type === 2)
             .map((data, index) => (
               <Link
                 href={`/renta-fija/${sanitizeTitleForURL(data.title)}/${data.id}`}

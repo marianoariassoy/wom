@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'wouter'
 import Image from '../../components/Image'
-import { Back, Forward } from '../../icons'
+import { Back, Forward } from '../../components/icons'
 import useFetch from '../../hooks/useFetch'
 import Loader from '../../components/Loader'
 

@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Linkedin, Twitter } from '../icons'
+import { Instagram, Facebook, Linkedin, Twitter } from '../components/icons'
 
 const items = [
   {

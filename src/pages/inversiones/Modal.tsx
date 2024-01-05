@@ -1,4 +1,4 @@
-import { Back, Forward } from '../../icons'
+import { Back, Forward } from '../../components/icons'
 
 const Modal = ({ currentImage, setCurrentImage, handelNext, handelPrev }) => {
   const handelClick = e => {

@@ -20,8 +20,7 @@ const OtrosMercados = () => {
     <Layout>
       <header className='h-[33vh] relative'>
         <img
-          src='https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-          alt=''
+          src='https://marianoarias.soy/sites/wom-backend/images-static/inversiones.jpg'
           className='w-full h-full object-cover object-center'
         />
       </header>
@@ -32,7 +31,7 @@ const OtrosMercados = () => {
             <Menu />
           </div>
 
-          <div className='col flex flex-col gap-y-12'>
+          <div className='col flex flex-col gap-y-20'>
             {loading ? (
               <Loader />
             ) : (
@@ -47,11 +46,11 @@ const OtrosMercados = () => {
         </div>
       </section>
 
-      <div>
+      <section>
         <div className='w-full m-auto max-w-6xl px-6'>
           <SocaloBottom color='bg-tertiary'> </SocaloBottom>
         </div>
-      </div>
+      </section>
 
       <Newsletter />
       <Contacto />

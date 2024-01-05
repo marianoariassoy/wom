@@ -1,5 +1,5 @@
 import { SocaloTop } from '../../ui'
-import { Check } from '../../icons'
+import { Check } from '../../components/icons'
 import FormReuniones from './FormReuniones'
 
 const Reuniones = () => {

@@ -1,4 +1,4 @@
-import { Check, Bull } from '../../icons'
+import { Check, Bull } from '../../components/icons'
 
 interface Props {
   item: {

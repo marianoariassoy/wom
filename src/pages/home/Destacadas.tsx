@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import ItemDestacadas from './ItemDestacadas'
-import { DownBig } from '../../icons'
+import { DownBig } from '../../components/icons'
 import { Button } from '../../ui'
 import useFetch from '../../hooks/useFetch'
 import Loader from '../../components/Loader'

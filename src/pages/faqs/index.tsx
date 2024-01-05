@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { HeadProvider, Title } from 'react-head'
 import Layout from '../../layout/Layout'
 import { SocaloBottom } from '../../ui'
-import { DownBig } from '../../icons'
+import { DownBig } from '../../components/icons'
 import ItemFaqs from './ItemFaqs'
 import Contacto from '../home/Contacto'
 import Newsletter from '../home/Newsletter'
@@ -25,7 +25,7 @@ const Index = () => {
           </div>
         </div>
         <img
-          src='http://localhost/sites/wom-backend/images-static/faqs.jpg'
+          src='https://marianoarias.soy/sites/wom-backend/images-static/faqs.jpg'
           alt='Imagen para FAQs'
           className='w-full h-full object-cover object-center'
         />

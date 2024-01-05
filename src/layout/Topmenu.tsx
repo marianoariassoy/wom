@@ -1,5 +1,5 @@
 import Social from './Social'
-import { Whatsapp } from '../icons'
+import { Whatsapp } from '../components/icons'
 
 const Topmenu = () => {
   return (
