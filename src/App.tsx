@@ -1,6 +1,7 @@
 import { Route, Switch } from 'wouter'
 import Home from './pages/home'
 import Faqs from './pages/faqs'
+import OtrosMercados from './pages/inversiones/OtrosMercados'
 import Inversiones from './pages/inversiones'
 import Error from './pages/error'
 
@@ -28,11 +29,15 @@ function App() {
         component={Home}
       />
       <Route
-        path='/renta-variable/:title'
+        path='/renta-variable/:title/:id'
         component={Inversiones}
       />
       <Route
-        path='/renta-fija/:title'
+        path='/renta-variable/otros-mercados'
+        component={OtrosMercados}
+      />
+      <Route
+        path='/renta-fija/:title/:id'
         component={Inversiones}
       />
       <Route

@@ -13,7 +13,7 @@ const ItemDestacadas = ({ data: { title, description, image, banner } }: Props) 
   return (
     <article className='rounded-bl-3xl overflow-hidden relative'>
       {banner && (
-        <div className='absolute -right-14 top-10 bg-secondary text-white font-medium w-full py-3 z-20 text-sm text-center rotate-[30deg]'>
+        <div className='absolute -right-14 top-10 bg-secondary text-white font-medium w-full py-3 z-20 text-sm text-center rotate-[30deg] uppercase'>
           {banner}
         </div>
       )}

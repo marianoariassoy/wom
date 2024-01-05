@@ -1,70 +1,46 @@
 import { SocaloBottom, SocaloTop } from '../../ui'
 import ItemIversiones from './ItemIversiones'
+import ItemFondos from './ItemFondos'
+import useFetch from '../../hooks/useFetch'
+import Loader from '../../components/Loader'
 
 const Inversiones = () => {
-  const items = [
-    {
-      title: 'MIAMI',
-      type: 'Renta variable',
-      rentatibility: '5.8%',
-      from: 'USD 350.000',
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    },
-    {
-      title: 'MIAMI',
-      type: 'Renta variable',
-      rentatibility: '5.8%',
-      from: 'USD 350.000',
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    },
-    {
-      title: 'MIAMI',
-      type: 'Renta fija',
-      rentatibility: '5.8%',
-      from: 'USD 350.000',
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    },
-    {
-      title: 'MIAMI',
-      type: 'Renta fija',
-      rentatibility: '5.8%',
-      from: 'USD 350.000',
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    },
-    {
-      title: 'MIAMI',
-      type: 'Renta fija',
-      rentatibility: '5.8%',
-      from: 'USD 350.000',
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    },
-    {
-      title: 'MIAMI',
-      type: 'Renta fija',
-      rentatibility: '5.8%',
-      from: 'USD 350.000',
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    }
-  ]
+  const { data, loading } = useFetch(`/inversiones`)
 
   return (
     <section id='inversiones'>
       <div className='w-full m-auto max-w-6xl px-6'>
         <SocaloTop color='bg-primary' />
-        <div className='grid lg:grid-cols-2 gap-6 py-20'>
-          {items.map((item, index) => (
-            <ItemIversiones
-              key={index}
-              data={item}
-            />
-          ))}
-        </div>
+        {loading ? (
+          <Loader />
+        ) : (
+          <section className='py-20 flex flex-col gap-y-6'>
+            <div className='grid lg:grid-cols-2 gap-6 '>
+              {data
+                .filter(item => item.type === 1 && item.title != 'Fondo de inversión')
+                .map((item, index) => (
+                  <ItemIversiones
+                    key={index}
+                    data={item}
+                  />
+                ))}
+            </div>
+            <div>
+              <ItemFondos data={data.filter(item => item.title == 'Fondo de inversión')} />
+            </div>
+            <div className='grid lg:grid-cols-2 gap-6 '>
+              {data
+                .filter(item => item.type === 2 && item.title != 'Fondo de inversión')
+                .map((item, index) => (
+                  <ItemIversiones
+                    key={index}
+                    data={item}
+                  />
+                ))}
+            </div>
+          </section>
+        )}
+
         <SocaloBottom color='bg-gray'> </SocaloBottom>
       </div>
     </section>

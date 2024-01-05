@@ -2,11 +2,11 @@ interface Props {
   data: {
     title: string
     text: string
-    color: string
     icon: string
   }
+  color: string
 }
-const ItemPorqueinvertir = ({ data: { title, text, color, icon } }: Props) => {
+const ItemPorqueinvertir = ({ data: { title, text, icon }, color }: Props) => {
   return (
     <article className='bg-white rounded-bl-3xl flex flex-col gap-y-4 pb-6'>
       <div className={`${color} px-6 py-3 flex items-center justify-between gap-x-3`}>

@@ -4,54 +4,13 @@ import 'react-slideshow-image/dist/styles.css'
 import { Back, Forward } from '../../icons'
 import ItemSlider from './ItemSlider'
 import Modal from './Modal'
+import useFetch from '../../hooks/useFetch'
 
-const Slider = () => {
+const Slider = ({ id }) => {
+  const { data, loading } = useFetch(`/imagenes/${id}`)
+
   const [currentImage, setCurrentImage] = useState(null)
   const [currentIndex, setcurrentIndex] = useState(0)
-
-  const data = [
-    {
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    },
-    {
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    },
-    {
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    },
-    {
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    },
-    {
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    },
-    {
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    },
-    {
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    },
-    {
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    },
-    {
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    },
-    {
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    }
-  ]
-
   const handelNext = () => {
     if (currentIndex === data.length - 1) {
       setCurrentImage(data[0].image)
@@ -108,19 +67,23 @@ const Slider = () => {
   ]
 
   return (
-    <section className='mb-20'>
-      <Slide
-        {...sliderProperties}
-        responsive={responsiveSettings}
-      >
-        {data.map((item, index) => (
-          <ItemSlider
-            key={index}
-            data={item}
-            setCurrentImage={setCurrentImage}
-          />
-        ))}
-      </Slide>
+    <section>
+      {!loading && data.length && (
+        <div className='mb-20'>
+          <Slide
+            {...sliderProperties}
+            responsive={responsiveSettings}
+          >
+            {data.map((item, index) => (
+              <ItemSlider
+                key={index}
+                image={item.image}
+                setCurrentImage={setCurrentImage}
+              />
+            ))}
+          </Slide>
+        </div>
+      )}
 
       {currentImage && (
         <Modal

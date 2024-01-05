@@ -2,39 +2,34 @@ import { useEffect } from 'react'
 import { HeadProvider, Title } from 'react-head'
 import { useLocation } from 'wouter'
 import Layout from '../../layout/Layout'
-import { Pin, Check, Bull } from '../../icons'
+import { Pin } from '../../icons'
 import Menu from './Menu'
 import Contacto from '../home/Contacto'
 import Newsletter from '../home/Newsletter'
 import { SocaloBottom } from '../../ui'
 import Slider from './Slider'
+import useFetch from '../../hooks/useFetch'
+import Loader from '../../components/Loader'
+import ItemInfo from './ItemInfo'
 
 const Index = () => {
   const [path] = useLocation()
+  const title = path.split('/')[2]
+  const id = path.split('/')[3]
+  const { data, loading } = useFetch(`/inversiones/${title}`)
+  const { data: info, loading: loadingInfo } = useFetch(`/inversiones/info/${id}`)
   const color = path.split('/')[1] === 'renta-variable' ? 'text-secondary' : 'text-light'
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
-  const data = [
-    {
-      text: 'La presentación de los mercados e inversiones posibles'
-    },
-    {
-      text: 'La selección de las unidades'
-    },
-    {
-      text: 'Acompañamiento en todo el proceso de compra, administración y posterior venta'
-    }
-  ]
-
   return (
     <Layout>
       <header className='h-[33vh] relative'>
         <img
-          src='https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-          alt=''
+          src='http://localhost/sites/wom-backend/images-static/inversiones.jpg'
+          alt='Imagen para inversiones'
           className='w-full h-full object-cover object-center'
         />
       </header>
@@ -46,48 +41,58 @@ const Index = () => {
           </div>
 
           <div className='col flex flex-col gap-y-12'>
-            <div className='flex gap-x-3 items-center text-2xl'>
-              <div className={color}>
-                <Pin />
-              </div>
-              <h1 className='font-secondary font-bold text-primary'>Hipotecas</h1>
-            </div>
-
-            <div className='flex flex-col gap-y-3 text-gray'>
-              {data.map((item, index) => (
-                <article
-                  key={index}
-                  className='flex gap-x-3 items-center'
-                >
-                  <div className={`text-xl ${color}`}>
-                    <Check />
+            {loading ? (
+              <Loader />
+            ) : (
+              <section className='flex flex-col gap-6'>
+                <div className='flex gap-x-3 items-center text-2xl'>
+                  <div className={color}>
+                    <Pin />
                   </div>
-                  <div>{item.text}</div>
-                </article>
-              ))}
-            </div>
+                  <h1 className='font-secondary font-bold text-primary'>{data[0].title}</h1>
+                </div>
 
-            <div>
-              <h1 className='font-secondary font-bold text-primary text-xl mb-6'> ¿Por qué invertir en Miami?</h1>
-              <div className='flex flex-col gap-y-3 text-gray'>
-                {data.map((item, index) => (
-                  <div
-                    key={index}
-                    className='flex gap-x-3 items-center'
-                  >
-                    <div className={`text-xl ${color}`}>
-                      <Bull />
+                {loadingInfo ? (
+                  <Loader />
+                ) : (
+                  <div className='flex flex-col gap-y-3 text-gray'>
+                    {info
+                      .filter(item => item.type === 1)
+                      .map((item, index) => (
+                        <ItemInfo
+                          key={index}
+                          item={item}
+                          color={color}
+                        />
+                      ))}
+                  </div>
+                )}
+
+                {!loadingInfo && info.filter(item => item.type === 2).length > 0 && (
+                  <div>
+                    <h1 className='font-secondary font-bold text-primary text-xl mb-6'>
+                      ¿Por qué invertir en {data[0].title}?
+                    </h1>
+                    <div className='flex flex-col gap-y-3 text-gray'>
+                      {info
+                        .filter(item => item.type === 2)
+                        .map((item, index) => (
+                          <ItemInfo
+                            key={index}
+                            item={item}
+                            color={color}
+                          />
+                        ))}
                     </div>
-                    <div className='text-wrap'>{item.text}</div>
                   </div>
-                ))}
-              </div>
-            </div>
+                )}
+              </section>
+            )}
           </div>
         </div>
       </section>
 
-      <Slider />
+      <Slider id={id} />
 
       <div>
         <div className='w-full m-auto max-w-6xl px-6'>

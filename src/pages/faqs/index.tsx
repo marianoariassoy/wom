@@ -6,34 +6,16 @@ import { DownBig } from '../../icons'
 import ItemFaqs from './ItemFaqs'
 import Contacto from '../home/Contacto'
 import Newsletter from '../home/Newsletter'
+import useFetch from '../../hooks/useFetch'
+import Loader from '../../components/Loader'
 
 const Index = () => {
+  const { data, loading } = useFetch(`/faqs`)
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
-  const data = [
-    {
-      title: '¿Puedo invertir aunque no sea ciudadano ni residente de Estados Unidos?',
-      text: 'No es necesario. (En la gran mayoría de los casos) Puedes invertir desde la comodidad de tu hogar. Toda la documentación necesaria puede suscribirse por vía electrónica.'
-    },
-    {
-      title: '¿Puedo invertir aunque no sea ciudadano ni residente de Estados Unidos?',
-      text: 'No es necesario. (En la gran mayoría de los casos) Puedes invertir desde la comodidad de tu hogar. Toda la documentación necesaria puede suscribirse por vía electrónica.'
-    },
-    {
-      title: '¿Puedo invertir aunque no sea ciudadano ni residente de Estados Unidos?',
-      text: 'No es necesario. (En la gran mayoría de los casos) Puedes invertir desde la comodidad de tu hogar. Toda la documentación necesaria puede suscribirse por vía electrónica.'
-    },
-    {
-      title: '¿Puedo invertir aunque no sea ciudadano ni residente de Estados Unidos?',
-      text: 'No es necesario. (En la gran mayoría de los casos) Puedes invertir desde la comodidad de tu hogar. Toda la documentación necesaria puede suscribirse por vía electrónica.'
-    },
-    {
-      title: '¿Puedo invertir aunque no sea ciudadano ni residente de Estados Unidos?',
-      text: 'No es necesario. (En la gran mayoría de los casos) Puedes invertir desde la comodidad de tu hogar. Toda la documentación necesaria puede suscribirse por vía electrónica.'
-    }
-  ]
   return (
     <Layout>
       <section className='h-[33vh] relative'>
@@ -43,8 +25,8 @@ const Index = () => {
           </div>
         </div>
         <img
-          src='https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-          alt=''
+          src='http://localhost/sites/wom-backend/images-static/faqs.jpg'
+          alt='Imagen para FAQs'
           className='w-full h-full object-cover object-center'
         />
       </section>
@@ -58,14 +40,18 @@ const Index = () => {
             </div>
           </div>
 
-          <div className='w-full flex flex-col gap-y-3 lg:px-12 pb-20'>
-            {data.map((item, index) => (
-              <ItemFaqs
-                key={index}
-                data={item}
-              />
-            ))}
-          </div>
+          {loading ? (
+            <Loader />
+          ) : (
+            <div className='w-full flex flex-col gap-y-3 lg:px-12 pb-20'>
+              {data.map((item, index) => (
+                <ItemFaqs
+                  key={index}
+                  data={item}
+                />
+              ))}
+            </div>
+          )}
 
           <SocaloBottom color='bg-tertiary'> </SocaloBottom>
         </div>

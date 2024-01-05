@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-const apiUrl = 'https://api.saltaset.gob.ar/api'
-// const apiUrl = 'https://marianoarias.soy/sites/saltaset-backend/api'
+const apiUrl = 'http://localhost/sites/wom-backend/api'
 import axios from 'axios'
 
 type Data = string

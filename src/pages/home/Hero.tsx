@@ -1,35 +1,17 @@
 import { SocaloBottom } from '../../ui'
 import { Whatsapp } from '../../icons'
 import Slider from './Slider'
+import useFetch from '../../hooks/useFetch'
 
 const Hero = () => {
-  const data = [
-    {
-      id: 1,
-      image:
-        'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-      title: 'Disfruta del presente resguardando tu futuro'
-    },
-    {
-      id: 1,
-      image:
-        'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-      title: 'Title 2'
-    },
-    {
-      id: 1,
-      image:
-        'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-      title: 'Title 3'
-    }
-  ]
+  const { data, loading } = useFetch(`/portada`)
 
   return (
     <section
       id='hero'
       className='relative h-[70vh]'
     >
-      <Slider data={data} />
+      {!loading && <Slider data={data} />}
 
       <div className='fixed flex items-center gap-x-3 bottom-12 right-6 z-40'>
         <a

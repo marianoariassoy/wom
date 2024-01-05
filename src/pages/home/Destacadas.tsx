@@ -2,95 +2,11 @@ import { useState } from 'react'
 import ItemDestacadas from './ItemDestacadas'
 import { DownBig } from '../../icons'
 import { Button } from '../../ui'
+import useFetch from '../../hooks/useFetch'
+import Loader from '../../components/Loader'
 
 const Destacadas = () => {
-  const data = [
-    {
-      title: 'The JEM Private Residences',
-      description: 'MIAMI WORLDCENTER',
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      banner: 'NUEVO LANZAMIENTO'
-    },
-    {
-      title: 'The JEM Private Residences',
-      description: 'MIAMI WORLDCENTER',
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      banner: 'BANNER'
-    },
-    {
-      title: 'The JEM Private Residences',
-      description: 'MIAMI WORLDCENTER',
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      banner: ''
-    },
-    {
-      title: 'The JEM Private Residences',
-      description: 'MIAMI WORLDCENTER',
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      banner: 'NUEVO LANZAMIENTO'
-    },
-    {
-      title: 'The JEM Private Residences',
-      description: 'MIAMI WORLDCENTER',
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      banner: 'NUEVO LANZAMIENTO'
-    },
-    {
-      title: 'The JEM Private Residences',
-      description: 'MIAMI WORLDCENTER',
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      banner: 'BANNER'
-    },
-    {
-      title: 'The JEM Private Residences',
-      description: 'MIAMI WORLDCENTER',
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      banner: ''
-    },
-    {
-      title: 'The JEM Private Residences',
-      description: 'MIAMI WORLDCENTER',
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      banner: 'NUEVO LANZAMIENTO'
-    },
-    {
-      title: 'The JEM Private Residences',
-      description: 'MIAMI WORLDCENTER',
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      banner: 'NUEVO LANZAMIENTO'
-    },
-    {
-      title: 'The JEM Private Residences',
-      description: 'MIAMI WORLDCENTER',
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      banner: 'BANNER'
-    },
-    {
-      title: 'The JEM Private Residences',
-      description: 'MIAMI WORLDCENTER',
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      banner: ''
-    },
-    {
-      title: 'The JEM Private Residences',
-      description: 'MIAMI WORLDCENTER',
-      image:
-        'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      banner: 'NUEVO LANZAMIENTO'
-    }
-  ]
-
+  const { data, loading } = useFetch(`/destacadas`)
   const [show, setShow] = useState(5)
 
   return (
@@ -105,21 +21,28 @@ const Destacadas = () => {
             <DownBig />
           </a>
         </div>
-        <div className='destacadas-grid mb-12'>
-          {data.slice(0, show).map((item, index) => (
-            <ItemDestacadas
-              key={index}
-              data={item}
-            />
-          ))}
-        </div>
-        <div className='flex justify-center items-start'>
-          {show < data.length && (
-            <div onClick={() => setShow(show + 6)}>
-              <Button color='bg-secondary'>Más inversiones</Button>
+
+        {loading ? (
+          <Loader />
+        ) : (
+          <section>
+            <div className='destacadas-grid mb-12'>
+              {data.slice(0, show).map((item, index) => (
+                <ItemDestacadas
+                  key={index}
+                  data={item}
+                />
+              ))}
             </div>
-          )}
-        </div>
+            <div className='flex justify-center items-start'>
+              {show < data.length && (
+                <div onClick={() => setShow(show + 6)}>
+                  <Button color='bg-secondary'>Más inversiones</Button>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
       </div>
     </section>
   )
