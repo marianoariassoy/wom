@@ -1,3 +1,4 @@
+import { Link } from 'wouter'
 import Image from '../../components/Image'
 import { inversion } from '../../data'
 import { sanitizeTitleForURL } from '../../utils'
@@ -9,12 +10,11 @@ const ItemIversiones = ({ data }) => {
   return (
     <article className='grid grid-cols-2 rounded-bl-3xl overflow-hidden shadow-main h-[300px] gap-x-3'>
       <div className='col relative'>
-        <a
-          href={url1}
-          className='absolute bg-black/15 backdrop-blur w-full h-full z-20 top-0 left-0 transition-all  text-white text-4xl flex items-center justify-center opacity-0 hover:opacity-100'
-        >
-          +
-        </a>
+        <Link href={url1}>
+          <a className='absolute bg-black/15 backdrop-blur w-full h-full z-20 top-0 left-0 transition-all  text-white text-4xl flex items-center justify-center opacity-0 hover:opacity-100'>
+            +
+          </a>
+        </Link>
         <div className='aspect-[5-4]'>
           <Image
             src={data[0].image}
@@ -43,14 +43,15 @@ const ItemIversiones = ({ data }) => {
                 </span>
               </p>
               <h4 className='font-semibold'>INVERSIONES DESDE {item.from}</h4>
-              <a
-                href={item.type === 1 ? url1 : url2}
-                className={`font-bold text-white px-4 py-2 text-sm mt-3 hover:bg-black transition-colors ${
-                  item.type === 1 ? 'bg-secondary' : 'bg-light'
-                }`}
-              >
-                VER MÁS +
-              </a>
+              <Link href={item.type === 1 ? url1 : url2}>
+                <a
+                  className={`font-bold text-white px-4 py-2 text-sm mt-3 hover:bg-black transition-colors ${
+                    item.type === 1 ? 'bg-secondary' : 'bg-light'
+                  }`}
+                >
+                  VER MÁS +
+                </a>
+              </Link>
             </div>
           ))}
         </div>
