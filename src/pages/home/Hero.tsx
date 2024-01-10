@@ -16,12 +16,14 @@ const Hero = () => {
       <div className='fixed flex items-center gap-x-3 bottom-12 right-6 z-40'>
         <a
           href='https://wa.me/19546690141'
+          target='_blank'
           className='bg-white py-3 px-6 text-gray text-sm rounded-full shadow hover:text-white bg-secondary-hover transition-colors'
         >
           Click aquí para chatear
         </a>
         <a
           href='https://wa.me/19546690141'
+          target='_blank'
           className=' text-white bg-whatsapp rounded-full transition-all h-14 text-xl aspect-square flex items-center justify-center shadow'
         >
           <Whatsapp />

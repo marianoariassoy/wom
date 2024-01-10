@@ -23,6 +23,7 @@ const Topmenu = () => {
       </div>
       <a
         href='https://wa.me/19546690141'
+        target='_blank'
         className='absolute text-white px-4 py-5 bg-whatsapp rounded-bl-xl transition-all hover:translate-y-1'
       >
         <Whatsapp />

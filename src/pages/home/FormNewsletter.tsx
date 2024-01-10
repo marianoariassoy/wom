@@ -3,6 +3,8 @@ import axios from 'axios'
 import { Input, Button } from '../../ui'
 import { useForm } from 'react-hook-form'
 import BeatLoader from 'react-spinners/BeatLoader'
+import { PhoneInput } from 'react-international-phone'
+import 'react-international-phone/style.css'
 
 interface Inputs {
   email: string
@@ -13,6 +15,7 @@ const FormNewsletter = () => {
   const [sended, setSended] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState(false)
+  const [phone, setPhone] = useState('')
 
   const { register, handleSubmit } = useForm()
 
@@ -25,7 +28,7 @@ const FormNewsletter = () => {
       subject: 'Suscripción'
     }
 
-    axios.post('', { ...data, ...sender }).then(data => {
+    axios.post('', { ...data, phone, ...sender }).then(data => {
       if (data.data === 'success') {
         setSended(true)
         setSending(false)
@@ -56,10 +59,12 @@ const FormNewsletter = () => {
                 />
               </div>
               <div>
-                <Input
-                  type='text'
+                <PhoneInput
+                  defaultCountry='ar'
+                  value={phone}
+                  onChange={phone => setPhone(phone)}
+                  className='w-full'
                   placeholder='Por Whatsapp'
-                  register={register('phone')}
                 />
               </div>
             </div>

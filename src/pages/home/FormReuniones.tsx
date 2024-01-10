@@ -3,6 +3,8 @@ import axios from 'axios'
 import { Input, Button } from '../../ui'
 import { useForm } from 'react-hook-form'
 import BeatLoader from 'react-spinners/BeatLoader'
+import { PhoneInput } from 'react-international-phone'
+import 'react-international-phone/style.css'
 
 interface Inputs {
   name: string
@@ -14,6 +16,7 @@ const FormReuniones = () => {
   const [sended, setSended] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState(false)
+  const [phone, setPhone] = useState('')
 
   const {
     register,
@@ -30,7 +33,7 @@ const FormReuniones = () => {
       subject: 'Solicitud de Reunión'
     }
 
-    axios.post('', { ...data, ...sender }).then(data => {
+    axios.post('', { ...data, phone, ...sender }).then(data => {
       if (data.data === 'success') {
         setSended(true)
         setSending(false)
@@ -66,12 +69,12 @@ const FormReuniones = () => {
                 {errors.name && <Error />}
               </div>
               <div>
-                <Input
-                  type='text'
-                  placeholder='Télefono'
-                  register={register('phone', { required: true })}
+                <PhoneInput
+                  defaultCountry='ar'
+                  value={phone}
+                  onChange={phone => setPhone(phone)}
+                  className='w-full'
                 />
-                {errors.phone && <Error />}
               </div>
               <div>
                 <Input

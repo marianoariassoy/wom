@@ -3,6 +3,7 @@ import Home from './pages/home'
 import Faqs from './pages/faqs'
 import OtrosMercados from './pages/inversiones/OtrosMercados'
 import Inversiones from './pages/inversiones'
+import Terminos from './pages/terminos'
 import Error from './pages/error'
 
 function App() {
@@ -43,6 +44,10 @@ function App() {
       <Route
         path='/faqs'
         component={Faqs}
+      />
+      <Route
+        path='/terminos-y-condiciones'
+        component={Terminos}
       />
       <Route component={Error} />
     </Switch>

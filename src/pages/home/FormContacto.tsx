@@ -3,6 +3,8 @@ import axios from 'axios'
 import { Input, Button, Textarea, Select } from '../../ui'
 import { useForm } from 'react-hook-form'
 import BeatLoader from 'react-spinners/BeatLoader'
+import { PhoneInput } from 'react-international-phone'
+import 'react-international-phone/style.css'
 
 interface Inputs {
   oportunidad: string
@@ -16,6 +18,7 @@ const FormContacto = () => {
   const [sended, setSended] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState(false)
+  const [phone, setPhone] = useState('')
 
   const {
     register,
@@ -32,7 +35,7 @@ const FormContacto = () => {
       subject: 'Contacto'
     }
 
-    axios.post('', { ...data, ...sender }).then(data => {
+    axios.post('', { ...data, phone, ...sender }).then(data => {
       if (data.data === 'success') {
         setSended(true)
         setSending(false)
@@ -43,7 +46,18 @@ const FormContacto = () => {
     })
   }
 
-  const oportunidadOptions = ['Cotización', 'Revisión', 'Inversión', 'Cotización y Revisión']
+  const oportunidadOptions = [
+    'Miami',
+    'Orlando',
+    'Baltimore',
+    'Birmingham',
+    'Fondo de inversión (R. Variable)',
+    'Otros mercados',
+    'Fondo de inversión (R. Fija)',
+    'Hipotecas',
+    'Storage',
+    'Otras consultas'
+  ]
 
   const Error = () => {
     return <div className='text-sm mt-2'>Por favor complete este campo</div>
@@ -76,13 +90,13 @@ const FormContacto = () => {
               />
               {errors.name && <Error />}
             </div>
-            <div>
-              <Input
-                type='text'
-                placeholder='Teléfono de contacto'
-                register={register('phone', { required: true })}
+            <div className='phone-input-container'>
+              <PhoneInput
+                defaultCountry='ar'
+                value={phone}
+                onChange={phone => setPhone(phone)}
+                className='w-full'
               />
-              {errors.phone && <Error />}
             </div>
             <div>
               <Input

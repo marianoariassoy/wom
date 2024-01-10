@@ -2,7 +2,6 @@ import { SocaloBottom, SocaloTop } from '../../ui'
 import ItemIversiones from './ItemIversiones'
 import ItemFondos from './ItemFondos'
 import useFetch from '../../hooks/useFetch'
-import Loader from '../../components/Loader'
 
 const Inversiones = () => {
   const { data, loading } = useFetch(`/inversiones`)
@@ -11,9 +10,7 @@ const Inversiones = () => {
     <section id='inversiones'>
       <div className='w-full m-auto max-w-6xl px-6'>
         <SocaloTop color='bg-primary' />
-        {loading ? (
-          <Loader />
-        ) : (
+        {!loading && (
           <section className='py-20 flex flex-col gap-y-6'>
             <div className='grid lg:grid-cols-2 gap-6 '>
               {data

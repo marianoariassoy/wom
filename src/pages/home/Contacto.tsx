@@ -7,7 +7,7 @@ const Contacto = () => {
       className='text-white bg-primary'
     >
       <div className='w-full m-auto max-w-6xl pb-16 px-6 flex flex-col lg:flex-row gap-6 pt-20'>
-        <div className='col lg:w-3/5'>
+        <div className='col lg:w-3/5 lg:pl-20'>
           <FormContacto />
         </div>
         <div className='col lg:w-2/5 lg:px-12'>

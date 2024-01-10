@@ -1,13 +1,12 @@
 import { Link, useLocation } from 'wouter'
 import { sanitizeTitleForURL } from '../utils'
 import useFetch from '../hooks/useFetch'
-import Loader from '../components/Loader'
 
 const Submenu = () => {
   const { data, loading } = useFetch(`/inversiones`)
   const [path] = useLocation()
 
-  if (loading) return <Loader />
+  if (loading) return null
 
   return (
     <div className='absolute text-sm bg-white p-6 pr-12 -ml-6 pt-10 hidden submenu'>
@@ -27,7 +26,7 @@ const Submenu = () => {
           ))}
       </div>
       <div className='flex flex-col gap-y-1'>
-        <h2 className='text-light font-semibold uppercase'>Renta Variable</h2>
+        <h2 className='text-light font-semibold uppercase'>Renta Fija</h2>
         {data
           .filter(item => +item.type === 2)
           .map((data, index) => (

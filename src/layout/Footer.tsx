@@ -1,3 +1,4 @@
+import { Link } from 'wouter'
 import Logo from '../assets/images/logo-footer.svg'
 
 const Footer = () => {
@@ -14,12 +15,9 @@ const Footer = () => {
         <span>Todos los derechos reservados</span>
         <span className='hidden lg:block'>|</span>
         <span>
-          <a
-            href='#'
-            className='hover:text-white'
-          >
-            Términos y Condiciones
-          </a>
+          <Link href='/terminos-y-condiciones'>
+            <a className='hover:text-white'>Términos y Condiciones</a>
+          </Link>
         </span>
       </div>
     </footer>

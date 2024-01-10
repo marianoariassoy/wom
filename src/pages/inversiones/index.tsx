@@ -9,7 +9,6 @@ import Newsletter from '../home/Newsletter'
 import { SocaloBottom } from '../../ui'
 import Slider from './Slider'
 import useFetch from '../../hooks/useFetch'
-import Loader from '../../components/Loader'
 import InversionesInfo from './InversionesInfo'
 
 const Index = () => {
@@ -46,9 +45,7 @@ const Index = () => {
           </div>
 
           <div className='col'>
-            {loading ? (
-              <Loader />
-            ) : data ? (
+            {loading ? null : data ? (
               <section className='flex flex-col gap-6'>
                 <div className='flex gap-x-3 items-center text-2xl'>
                   <div className={color}>

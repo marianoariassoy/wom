@@ -1,13 +1,12 @@
 import { Link, useLocation } from 'wouter'
 import { sanitizeTitleForURL } from '../../utils'
 import useFetch from '../../hooks/useFetch'
-import Loader from '../../components/Loader'
 
 const Menu = () => {
   const { data, loading } = useFetch(`/inversiones`)
   const [path] = useLocation()
 
-  if (loading) return <Loader />
+  if (loading) return null
 
   return (
     <section className='col flex lg:flex-col gap-x-6 gap-y-12 text-sm'>

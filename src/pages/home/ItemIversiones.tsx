@@ -19,13 +19,13 @@ const ItemIversiones = ({ data: { id, title, type, rentability, from, image } }:
 
   return (
     <article className='grid grid-cols-2 rounded-bl-3xl overflow-hidden shadow-main h-[300px] gap-x-3'>
-      <div className='col relative'>
+      <div className='col relative h-[300px]'>
         <Link href={url}>
-          <a className='absolute bg-black/15 backdrop-blur w-full h-full z-20 top-0 left-0 transition-all  text-white text-4xl flex items-center justify-center opacity-0 hover:opacity-100'>
+          <a className='absolute bg-black/30 backdrop-blur-sm w-full h-full z-20 top-0 left-0 transition-all  text-white text-4xl flex items-center justify-center opacity-0 hover:opacity-100'>
             +
           </a>
         </Link>
-        <div className='aspect-[4-5] h-fulll'>
+        <div className='w-full'>
           <Image
             src={image}
             alt={title}
@@ -41,7 +41,7 @@ const ItemIversiones = ({ data: { id, title, type, rentability, from, image } }:
         </div>
         <p className='text-gray'>
           Rentabilidad estimada
-          <span className={`font-semibold text-xl ml-1 ${type === 1 ? 'text-secondary' : 'text-light'}`}>
+          <span className={`block font-semibold text-xl ${type === 1 ? 'text-secondary' : 'text-light'}`}>
             {rentability}
           </span>
         </p>

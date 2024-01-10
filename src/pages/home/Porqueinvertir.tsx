@@ -1,7 +1,6 @@
 import { SocaloBottom } from '../../ui'
 import ItemPorqueinvertir from './ItemPorqueinvertir'
 import useFetch from '../../hooks/useFetch'
-import Loader from '../../components/Loader'
 
 const Porqueinvertir = () => {
   const { data, loading } = useFetch(`/porqueinvertir`)
@@ -15,9 +14,7 @@ const Porqueinvertir = () => {
         <h1 className='text-white text-center font-secondary text-2xl lg:text-3xl mb-12 font-bold'>
           ¿Por qué invertir en EE.UU.?
         </h1>
-        {loading ? (
-          <Loader />
-        ) : (
+        {!loading && (
           <div className='grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6 mb-20'>
             {data.map((item, index) => (
               <ItemPorqueinvertir
