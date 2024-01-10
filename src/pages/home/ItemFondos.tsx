@@ -8,8 +8,8 @@ const ItemIversiones = ({ data }) => {
   const url2 = '/renta-fija/' + sanitizeTitleForURL(data[1].title) + '/' + data[1].id
 
   return (
-    <article className='grid grid-cols-2 rounded-bl-3xl overflow-hidden shadow-main h-[300px] gap-x-3'>
-      <div className='col relative h-[300px]'>
+    <article className='grid lg:grid-cols-2 rounded-bl-3xl overflow-hidden shadow-main lg:h-[300px] gap-3'>
+      <div className='col relative lg:h-[300px]'>
         <Link href={url1}>
           <a className='absolute bg-black/30 backdrop-blur-sm w-full h-full z-20 top-0 left-0 transition-all  text-white text-4xl flex items-center justify-center opacity-0 hover:opacity-100'>
             +
@@ -45,7 +45,7 @@ const ItemIversiones = ({ data }) => {
               <h4 className='font-semibold'>INVERSIONES DESDE {item.from}</h4>
               <Link href={item.type === 1 ? url1 : url2}>
                 <a
-                  className={`font-bold text-white px-4 py-2 text-sm mt-3 hover:bg-black transition-colors ${
+                  className={`font-bold mb-2 text-white px-4 py-2 text-sm mt-3 hover:bg-black transition-colors ${
                     item.type === 1 ? 'bg-secondary' : 'bg-light'
                   }`}
                 >

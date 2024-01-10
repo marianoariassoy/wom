@@ -29,7 +29,7 @@ const Reuniones = () => {
               <img
                 src='./images/reuniones.jpg'
                 alt='Imagen reuniones'
-                className='w-full max-w-64 rounded-bl-3xl lg:rounded-none'
+                className='w-full rounded-bl-3xl lg:rounded-none'
               />
             </div>
             <div className='col lg:w-2/5'>

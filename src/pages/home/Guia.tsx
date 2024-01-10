@@ -78,13 +78,13 @@ const Guia = () => {
         )}
 
         <div
-          className='absolute hover:text-black lg:-ml-16 text-3xl text-gray cursor-pointer top-1/2'
+          className='absolute hidden lg:block hover:text-black lg:-ml-16 text-3xl text-gray cursor-pointer top-1/2'
           onClick={handleBack}
         >
           <Back />
         </div>
         <div
-          className='absolute hover:text-black right-0 lg:-mr-10 text-3xl text-gray cursor-pointer top-1/2'
+          className='absolute hidden lg:block hover:text-black right-0 lg:-mr-10 text-3xl text-gray cursor-pointer top-1/2'
           onClick={handleNext}
         >
           <Forward />

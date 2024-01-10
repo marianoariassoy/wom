@@ -9,7 +9,7 @@ interface Props {
 
 const ItemCasosdeexito = ({ data: { name, title, text, image } }: Props) => {
   return (
-    <article className='bg-white px-12 lg:px-6 py-6 flex flex-col gap-y-6 rounded-bl-3xl aspect-square lg:mr-6'>
+    <article className='bg-white px-16 lg:px-6 py-6 flex flex-col gap-y-6 rounded-bl-3xl aspect-square lg:mr-6'>
       <div className='row flex items-center gap-x-4'>
         <div>
           <img
