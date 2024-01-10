@@ -47,7 +47,7 @@ const ItemIversiones = ({ data: { id, title, type, rentability, from, image } }:
         <h4 className='font-semibold'>INVERSIONES DESDE {from}</h4>
         <Link href={url}>
           <a
-            className={`font-bold mb-2 text-white px-4 py-2 text-sm hover:bg-black transition-colors ${
+            className={`font-bold mb-2 text-white px-5 py-3 text-sm hover:bg-black transition-colors ${
               type === 1 ? 'bg-secondary' : 'bg-light'
             }`}
           >

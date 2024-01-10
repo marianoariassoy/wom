@@ -23,12 +23,12 @@ const Index = () => {
           </div>
           <div className='text-sm mb-20'>
             <p>
-              BIENVENIDO A NUESTRO SITIO WEB
+              <strong>BIENVENIDO A NUESTRO SITIO WEB</strong>
               <br />
               <br />
               El presente sitio web es propiedad exclusiva de la empresa WORLD OF MANAGEMENT S.R.L. CUIT: 30-71132812-9
-              y con domicilio social en Pje. Jiménez 1253, Piso 2, Dpto. 9BÂ° Cofico, CP 5000, Ciudad de Córdoba,
-              Provincia de Córdoba, Argentina.
+              y con domicilio social en Pje. Jiménez 1253, Piso 2, Dpto. 9 Cofico, CP 5000, Ciudad de Córdoba, Provincia
+              de Córdoba, Argentina.
               <br />
               <br />
               Para cualquier duda que le pueda surgir respecto de la interpretación y/o uso del presente sitio web por
@@ -60,15 +60,14 @@ const Index = () => {
               considere oportunas en cada momento.
               <br />
               <br />
-              <br />
-              PRIVACIDAD
+              <strong>PRIVACIDAD</strong>
               <br />
               <br />
               Nosotros recopilamos información sobre los visitantes de este sitio. La manera en que recopilamos esta
-              información está regida por nuestra Polí­tica de Privacidad. <br />
+              información está regida por nuestra Polí­tica de Privacidad.
               <br />
               <br />
-              MARCAS DE SERVICIO Y MARCAS REGISTRADAS
+              <strong>MARCAS DE SERVICIO Y MARCAS REGISTRADAS</strong>
               <br />
               <br />
               Nosotros protegemos nuestros derechos de propiedad intelectual y prohibimos el uso no autorizado de
@@ -82,8 +81,7 @@ const Index = () => {
               dueí±os.
               <br />
               <br />
-              <br />
-              DERECHOS DE PROPIEDAD INTELECTUAL
+              <strong>DERECHOS DE PROPIEDAD INTELECTUAL</strong>
               <br />
               <br />
               El contenido de nuestro sitio, incluyendo textos, gráficos, logotipos, í­conos de botones, imágenes,
@@ -102,8 +100,7 @@ const Index = () => {
               publicadas en este sitio web.
               <br />
               <br />
-              <br />
-              ENLACES
+              <strong>ENLACES</strong>
               <br />
               <br />
               Cualquier tipo de enlace de un sitio W eb a nuestro sitio tiene que haber sido autorizado previamente por
@@ -119,8 +116,7 @@ const Index = () => {
               SITIOS, LO HACE A SU PROPIO RIESGO Y SIN NUESTRO PERMISO.
               <br />
               <br />
-              <br />
-              ACCESO AL SITIO Y USO DEL MISMO
+              <strong> ACCESO AL SITIO Y USO DEL MISMO</strong>
               <br />
               <br />
               Usted no puede reproducir, duplicar, copiar, vender, revender, o explotar de ningíún modo este sitio para
@@ -147,8 +143,7 @@ const Index = () => {
               puede cambiar el precio y la disponibilidad de los servicios enumerados en este sitio sin previo aviso.
               <br />
               <br />
-              <br />
-              LIMITACIÓN DE RESPONSABILIDADES
+              <strong>LIMITACIÓN DE RESPONSABILIDADES</strong>
               <br />
               <br />
               USTED ENTIENDE Y ACEPTA ESPECIFICAMENTE QUE NOSOTROS NO SEREMOS RESPONSABLES POR NINGUNA PÉRDIDA O DAÑO
@@ -159,8 +154,7 @@ const Index = () => {
               AVISADOS DE LA POSIBILIDAD DE ESA PÉRDIDA O DAÑO.
               <br />
               <br />
-              <br />
-              UTILIZACIÓN DEL SITIO WEB WWW.WOM-LATAM.COM
+              <strong>UTILIZACIÓN DEL SITIO WEB WWW.WOM-LATAM.COM</strong>
               <br />
               <br />
               La aceptación de estos Términos y Condiciones implican su aceptación de las siguientes reglas: <br />
@@ -210,8 +204,7 @@ const Index = () => {
               se les podrá negar el acceso al Sitio Web a la sola discreción de WORLD OF MANAGEMENT S.R.L.
               <br />
               <br />
-              <br />
-              AVISO LEGAL SOBRE GARANTíAS
+              <strong>AVISO LEGAL SOBRE GARANTíAS</strong>
               <br />
               <br />
               NO OFRECEMOS NINGUNA GARANTíA DE QUE ESTE SITIO CUMPLIRí CON SUS REQUERIMIENTOS, O DE QUE NO HAYA
@@ -233,8 +226,7 @@ const Index = () => {
               SI HEMOS SIDO AVISADOS DE LA POSIBILIDAD DE QUE ESTOS DAÑOS OCURRIERAN.
               <br />
               <br />
-              <br />
-              INDEMNIZACIÓN
+              <strong>INDEMNIZACIÓN</strong>
               <br />
               <br />
               Usted acepta, a expensas suyas, indemnizar, defender y a mantener indemne a WORLD OF MANAGEMENT S.R.L. y a
@@ -246,8 +238,7 @@ const Index = () => {
               sitio.
               <br />
               <br />
-              <br />
-              RENUNCIA Y/O SEPARACIÓN DE CLÁUSULAS
+              <strong>RENUNCIA Y/O SEPARACIÓN DE CLÁUSULAS</strong>
               <br />
               <br />
               La renuncia por parte de cualquiera de las partes a un derecho, o a hacer un reclamo por incumplimiento
@@ -258,8 +249,7 @@ const Index = () => {
               fuerza y efecto.
               <br />
               <br />
-              <br />
-              INFORMACIÓN
+              <strong>INFORMACIÓN</strong>
               <br />
               <br />
               La información que se otorga en virtud de la presente operación informática, implica la prestación del
@@ -268,15 +258,13 @@ const Index = () => {
               - Provincia de Córdoba, Argentina.
               <br />
               <br />
-              <br />
-              DERECHOS RESERVADOS
+              <strong>DERECHOS RESERVADOS</strong>
               <br />
               <br />
               Todo derecho no expresamente concedido a usted aquí­, queda reservado para nosotros.
               <br />
               <br />
-              <br />
-              TRADUCCIÓN
+              <strong>TRADUCCIÓN</strong>
               <br />
               <br />
               En caso de que en algíún momento se pusieran a disposición suya estos términos de uso en varios idiomas
@@ -284,8 +272,7 @@ const Index = () => {
               versión en español se considerará la correcta.
               <br />
               <br />
-              <br />
-              LEY APLICABLE Y JURISDICCIÓN
+              <strong>LEY APLICABLE Y JURISDICCIÓN</strong>
               <br />
               <br />
               Los presentes Términos y Condiciones, así­ como sus enmiendas y modificaciones, serán regidos e
@@ -296,11 +283,7 @@ const Index = () => {
               tribunales de la Ciudad de Córdoba, Repíública Argentina.
               <br />
               <br />
-              <br />
-              <br />
-              GRACIAS POR VISITAR NUESTRO SITIO WEB Y POR LEER ESTE DOCUMENTO.
-              <br />
-              <br />
+              <strong>GRACIAS POR VISITAR NUESTRO SITIO WEB Y POR LEER ESTE DOCUMENTO.</strong>
             </p>
           </div>
 

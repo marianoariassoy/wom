@@ -11,9 +11,7 @@ const ItemFaqs = ({ data: { title, text } }: Props) => {
 
   return (
     <article
-      className={`px-4 lg:px-8 py-3 rounded-3xl relative cursor-pointer ${
-        show ? 'bg-white fade-in' : 'hover:bg-white/40'
-      } `}
+      className={`px-4 lg:px-8 py-3 rounded-3xl relative cursor-pointer ${show ? 'bg-white' : 'hover:bg-white'} `}
       onClick={() => setShow(!show)}
     >
       <div className='flex justify-between gap-x-4 items-center'>

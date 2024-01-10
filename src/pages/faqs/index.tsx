@@ -41,7 +41,9 @@ const Index = () => {
           </div>
 
           {loading ? (
-            <Loader />
+            <div className='mb-20'>
+              <Loader />
+            </div>
           ) : (
             <div className='w-full flex flex-col gap-y-3 lg:px-12 pb-20'>
               {data.map((item, index) => (

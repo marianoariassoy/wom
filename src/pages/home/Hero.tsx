@@ -17,7 +17,7 @@ const Hero = () => {
         <a
           href='https://wa.me/19546690141'
           target='_blank'
-          className='bg-white py-3 px-6 text-gray text-sm rounded-full shadow hover:text-white bg-secondary-hover transition-colors'
+          className='bg-white py-3 px-6 text-gray text-sm rounded-full shadow hover:text-white transition-colors hover:bg-black'
         >
           Click aquí para chatear
         </a>
