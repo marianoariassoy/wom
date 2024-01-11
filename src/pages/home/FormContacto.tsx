@@ -93,9 +93,12 @@ const FormContacto = () => {
             <div className='phone-input-container'>
               <PhoneInput
                 defaultCountry='ar'
+                placeholder='Teléfono'
+                name='phone'
                 value={phone}
                 onChange={phone => setPhone(phone)}
                 className='w-full'
+                required
               />
             </div>
             <div>

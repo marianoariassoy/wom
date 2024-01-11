@@ -20,10 +20,28 @@ const Nav = () => {
               className='border-r pr-5'
               key={index}
             >
-              <Link href={`${location === '/' ? '#' : '/'}${data.title.toLowerCase().split(' ')[0]}`}>
+              <Link
+                href={`${
+                  location === '/' ||
+                  location === '/contacto' ||
+                  location === '/casos' ||
+                  location === '/guia' ||
+                  location === '/nosotros'
+                    ? '#'
+                    : '/'
+                }${data.title.toLowerCase().split(' ')[0]}`}
+              >
                 <a
                   key={index}
-                  className={`hover:opacity-50 uppercase transition-colors ${location === '/' ? 'scroll' : ''}`}
+                  className={`hover:opacity-50 uppercase transition-colors ${
+                    location === '/' ||
+                    location === '/contacto' ||
+                    location === '/casos' ||
+                    location === '/guia' ||
+                    location === '/nosotros'
+                      ? 'scroll'
+                      : ''
+                  }`}
                 >
                   {data.title}
                 </a>

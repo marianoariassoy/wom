@@ -19,11 +19,14 @@ const Index = () => {
 
   useEffect(() => {
     if (location === '/contacto' || location === '/casos' || location === '/guia' || location === '/nosotros') {
-      const targetElement = document.querySelector(`#${location.split('/').pop()}`) as HTMLElement
-      window.scrollTo({
-        top: targetElement.offsetTop - 100,
-        behavior: 'smooth'
-      })
+      setTimeout(() => {
+        const targetElement = document.querySelector(`#${location.split('/').pop()}`) as HTMLElement
+        const target = targetElement.offsetTop
+        window.scrollTo({
+          top: target - 100,
+          behavior: 'smooth'
+        })
+      }, 1000)
     }
     scroll()
   }, [location])
