@@ -15,7 +15,7 @@ const Porqueinvertir = () => {
           ¿Por qué invertir en EE.UU.?
         </h1>
         {!loading && (
-          <div className='grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6 mb-20'>
+          <div className='grid lg:grid-cols-3 gap-6 mb-20'>
             {data.map((item, index) => (
               <ItemPorqueinvertir
                 key={index}

@@ -10,7 +10,7 @@ interface Props {
 
 const ItemInfo = ({ item: { text, type }, color }: Props) => {
   return (
-    <article className='flex gap-x-3 items-center'>
+    <article className='flex gap-x-3 items-start'>
       <div className={`text-xl ${color}`}>{type === 1 ? <Check /> : <Bull />}</div>
       <div>{text}</div>
     </article>

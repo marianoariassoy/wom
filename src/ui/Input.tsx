@@ -1,14 +1,15 @@
 interface Props {
   type: string
+  style?: string
   placeholder: string
   register: any
 }
 
-const Input = ({ type, placeholder, register }: Props) => {
+const Input = ({ type, placeholder, register, style }: Props) => {
   return (
     <input
       type={type}
-      className='w-full bg-white rounded-2xl px-4 h-14 text-black text-sm'
+      className={`bg-white rounded-2xl px-4 h-14 text-black text-sm w-full ${style}`}
       placeholder={placeholder}
       {...register}
     />

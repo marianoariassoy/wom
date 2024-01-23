@@ -58,34 +58,51 @@ const FormReuniones = () => {
         </span>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className='flex gap-x-3 justify-between items-end lg:items-start'>
-            <div className='col grid lg:grid-cols-3 gap-3 grow'>
+          <div className='flex flex-col gap-3 items-start justify-start'>
+            <div className='row flex flex-col lg:flex-row gap-3 w-full'>
               <div>
                 <Input
                   type='text'
                   placeholder='Nombre y Apellido'
+                  style='lg:w-80'
                   register={register('name', { required: true })}
                 />
                 {errors.name && <Error />}
               </div>
               <div>
-                <PhoneInput
-                  defaultCountry='ar'
-                  value={phone}
-                  onChange={phone => setPhone(phone)}
-                  className='w-full'
-                />
-              </div>
-              <div>
                 <Input
                   type='email'
+                  style='lg:w-80'
                   placeholder='Email'
                   register={register('email', { required: true })}
                 />
                 {errors.email && <Error />}
               </div>
             </div>
-            <div className='flex justify-center w-52'>
+            <div className='row'>
+              <div className='font-bold text-sm my-3'>Número telefónico</div>
+              <div className='flex gap-3 items-start flex-wrap'>
+                <PhoneInput
+                  defaultCountry='ar'
+                  value={phone}
+                  onChange={phone => setPhone(phone)}
+                  className='w-32'
+                />
+                <Input
+                  type='text'
+                  placeholder='Cód. Area'
+                  style='w-28'
+                  register={register('cod-area', { required: true })}
+                />
+                <Input
+                  type='text'
+                  style='grow basis-0 lg:w-80 lg:grow-0 lg:basis-auto'
+                  placeholder='Número'
+                  register={register('phone', { required: true })}
+                />
+              </div>
+            </div>
+            <div className='row'>
               {sending ? <BeatLoader className='mt-6' /> : <Button color='bg-secondary-dark'>Solicitar Reunión</Button>}
             </div>
           </div>

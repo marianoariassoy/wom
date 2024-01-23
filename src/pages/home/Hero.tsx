@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section
       id='hero'
-      className='relative h-[70vh]'
+      className='relative h-[50vh] lg:h-[70vh]'
     >
       {!loading && <Slider data={data} />}
 

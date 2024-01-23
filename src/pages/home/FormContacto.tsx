@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form'
 import BeatLoader from 'react-spinners/BeatLoader'
 import { PhoneInput } from 'react-international-phone'
 import 'react-international-phone/style.css'
+import useFetch from '../../hooks/useFetch'
 
 interface Inputs {
   oportunidad: string
@@ -19,6 +20,7 @@ const FormContacto = () => {
   const [sending, setSending] = useState(false)
   const [error, setError] = useState(false)
   const [phone, setPhone] = useState('')
+  const { data: inversiones, loading: loadingInversiones } = useFetch(`/inversiones`)
 
   const {
     register,
@@ -46,18 +48,18 @@ const FormContacto = () => {
     })
   }
 
-  const oportunidadOptions = [
-    'Miami',
-    'Orlando',
-    'Baltimore',
-    'Birmingham',
-    'Fondo de inversión (R. Variable)',
-    'Otros mercados',
-    'Fondo de inversión (R. Fija)',
-    'Hipotecas',
-    'Storage',
-    'Otras consultas'
-  ]
+  // const oportunidadOptions = [
+  //   'Miami',
+  //   'Orlando',
+  //   'Baltimore',
+  //   'Birmingham',
+  //   'Fondo de inversión (R. Variable)',
+  //   'Otros mercados',
+  //   'Fondo de inversión (R. Fija)',
+  //   'Hipotecas',
+  //   'Storage',
+  //   'Otras consultas'
+  // ]
 
   const Error = () => {
     return <div className='text-sm mt-2'>Por favor complete este campo</div>
@@ -78,7 +80,7 @@ const FormContacto = () => {
               <Select
                 register={register('oportunidad', { required: true })}
                 name='Oportunidad de Inversión'
-                options={oportunidadOptions}
+                options={loadingInversiones ? [] : inversiones}
               />
               {errors.oportunidad && <Error />}
             </div>
@@ -90,16 +92,28 @@ const FormContacto = () => {
               />
               {errors.name && <Error />}
             </div>
-            <div className='phone-input-container'>
-              <PhoneInput
-                defaultCountry='ar'
-                placeholder='Teléfono'
-                name='phone'
-                value={phone}
-                onChange={phone => setPhone(phone)}
-                className='w-full'
-                required
-              />
+            <div>
+              <div className='font-bold text-sm mb-3 pl-3'>Número telefónico</div>
+              <div className='flex gap-3 items-start flex-wrap'>
+                <PhoneInput
+                  defaultCountry='ar'
+                  value={phone}
+                  onChange={phone => setPhone(phone)}
+                  className='w-32'
+                />
+                <Input
+                  type='text'
+                  placeholder='Cód. Area'
+                  style='w-28'
+                  register={register('cod-area')}
+                />
+                <Input
+                  type='text'
+                  style='grow basis-0'
+                  placeholder='Número'
+                  register={register('phone')}
+                />
+              </div>
             </div>
             <div>
               <Input

@@ -46,25 +46,41 @@ const FormNewsletter = () => {
           Se produjo un error al enviar el mensaje
         </div>
       ) : sended ? (
-        <div className='text-xl font-bold font-secondary text-center text-primary'>Muchas gracias por suscribirse.</div>
+        <div className='text-xl font-bold  font-secondary text-center text-primary'>
+          Muchas gracias por suscribirse.
+        </div>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className='flex gap-x-3 justify-between items-end lg:items-start'>
-            <div className='col grid lg:grid-cols-2 gap-3 grow'>
-              <div>
-                <Input
-                  type='email'
-                  placeholder='Por Email'
-                  register={register('email')}
-                />
-              </div>
-              <div>
+          <div className='flex flex-col gap-3'>
+            <div>
+              <div className='font-bold text-sm my-3 uppercase pl-3'>Por Email</div>
+              <Input
+                type='email'
+                placeholder='Por Email'
+                style='lg:w-80'
+                register={register('email')}
+              />
+            </div>
+            <div>
+              <div className='font-bold text-sm my-3 uppercase pl-3'>Por WhatsApp</div>
+              <div className='flex gap-3 items-start flex-wrap'>
                 <PhoneInput
                   defaultCountry='ar'
                   value={phone}
                   onChange={phone => setPhone(phone)}
-                  className='w-full'
-                  placeholder='Por Whatsapp'
+                  className='w-32'
+                />
+                <Input
+                  type='text'
+                  placeholder='Cód. Area'
+                  style='w-28'
+                  register={register('cod-area')}
+                />
+                <Input
+                  type='text'
+                  style='grow basis-0 lg:w-80 lg:grow-0 lg:basis-auto'
+                  placeholder='Número'
+                  register={register('phone')}
                 />
               </div>
             </div>

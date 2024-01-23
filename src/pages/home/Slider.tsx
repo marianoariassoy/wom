@@ -25,7 +25,7 @@ const Slider = ({ data }: Props) => {
       {data.map(item => (
         <div
           key={item.id}
-          className='h-[70vh] w-screen relative'
+          className='h-[50vh] lg:h-[70vh] w-screen relative'
         >
           <div className='absolute z-10 w-full h-full top-1/3'>
             <div className='m-auto max-w-6xl mt-8 font-bold px-6 flex justify-end'>

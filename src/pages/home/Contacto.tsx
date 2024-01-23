@@ -6,7 +6,7 @@ const Contacto = () => {
       id='contacto'
       className='text-white bg-primary'
     >
-      <div className='w-full m-auto max-w-6xl pb-16 px-6 flex flex-col lg:flex-row gap-6 pt-20'>
+      <div className='w-full m-auto max-w-6xl pb-16 px-6 flex flex-col-reverse lg:flex-row gap-6 pt-20'>
         <div className='col lg:w-3/5 lg:pl-20'>
           <FormContacto />
         </div>
@@ -15,7 +15,7 @@ const Contacto = () => {
             Queremos que inviertas bien informado y así obtengas la máxima rentabilidad en la compra de tus bienes
             raíces.
           </p>
-          <p>
+          <p className='mb-3'>
             Contáctanos completando el formulario para resolver tus dudas y orientarte hacia una inversión inteligente.
           </p>
         </div>
