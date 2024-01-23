@@ -46,24 +46,22 @@ const FormNewsletter = () => {
           Se produjo un error al enviar el mensaje
         </div>
       ) : sended ? (
-        <div className='text-xl font-bold  font-secondary text-center text-primary'>
-          Muchas gracias por suscribirse.
-        </div>
+        <div className='text-xl font-bold font-secondary text-center text-primary'>Muchas gracias por suscribirse.</div>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className='flex flex-col gap-3'>
+          <div className='flex flex-col gap-3  w-3/4'>
             <div>
               <div className='font-bold text-sm my-3 uppercase pl-3'>Por Email</div>
               <Input
                 type='email'
                 placeholder='Por Email'
-                style='w-full lg:w-1/2'
+                style='w-full'
                 register={register('email')}
               />
             </div>
             <div>
               <div className='font-bold text-sm my-3 uppercase pl-3'>Por WhatsApp</div>
-              <div className='flex gap-3 items-start flex-wrap'>
+              <div className='flex gap-3 items-start'>
                 <PhoneInput
                   defaultCountry='ar'
                   value={phone}

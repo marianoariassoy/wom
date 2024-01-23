@@ -59,22 +59,34 @@ const FormReuniones = () => {
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className='flex flex-col gap-3 items-start justify-start'>
-            <div className='row flex flex-col lg:flex-row gap-3 w-full lg:w-1/2'>
-              <Input
-                type='text'
-                placeholder='Nombre y Apellido'
-                style='w-full'
-                register={register('name', { required: true })}
-              />
-              {errors.name && <Error />}
-
-              <Input
-                type='email'
-                style='w-full'
-                placeholder='Email'
-                register={register('email', { required: true })}
-              />
-              {errors.email && <Error />}
+            <div className='row flex flex-col lg:flex-row gap-3 w-full lg:w-2/3'>
+              <div>
+                <Input
+                  type='text'
+                  placeholder='Nombre'
+                  style='w-full'
+                  register={register('name', { required: true })}
+                />
+                {errors.name && <Error />}
+              </div>
+              <div>
+                <Input
+                  type='text'
+                  placeholder='Apellido'
+                  style='w-full'
+                  register={register('lastname', { required: true })}
+                />
+                {errors.lastname && <Error />}
+              </div>
+              <div>
+                <Input
+                  type='email'
+                  style='w-full'
+                  placeholder='Email'
+                  register={register('email', { required: true })}
+                />
+                {errors.email && <Error />}
+              </div>
             </div>
             <div className='row w-full lg:w-1/2'>
               <div className='font-bold text-sm my-3'>Número telefónico</div>

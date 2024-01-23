@@ -75,8 +75,17 @@ const FormContacto = () => {
               <Input
                 type='text'
                 style='w-full'
-                placeholder='Nombre y Apellido'
+                placeholder='Nombre'
                 register={register('name', { required: true })}
+              />
+              {errors.name && <Error />}
+            </div>
+            <div>
+              <Input
+                type='text'
+                style='w-full'
+                placeholder='Apellido'
+                register={register('lastname', { required: true })}
               />
               {errors.name && <Error />}
             </div>
