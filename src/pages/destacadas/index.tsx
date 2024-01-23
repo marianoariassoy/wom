@@ -15,9 +15,8 @@ import Slider from './Slider'
 
 const Index = () => {
   const [path] = useLocation()
-  const titleUrl = path.split('/')[2]
   const id = path.split('/')[3]
-  const { data, loading } = useFetch(`/destacadas/${titleUrl}`)
+  const { data, loading } = useFetch(`/destacadas/${id}`)
   let title = ''
 
   if (!loading) {
