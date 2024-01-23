@@ -76,3 +76,11 @@
   border: 0;
   border-right: 1px solid #ccc;
 }
+
+.item-destacada:hover,
+.item-destacada-active {
+  background-color: $color-primary !important;
+  h2 {
+    color: white;
+  }
+}

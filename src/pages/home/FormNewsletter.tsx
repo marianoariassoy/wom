@@ -57,7 +57,7 @@ const FormNewsletter = () => {
               <Input
                 type='email'
                 placeholder='Por Email'
-                style='lg:w-80'
+                style='w-full lg:w-1/2'
                 register={register('email')}
               />
             </div>

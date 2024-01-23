@@ -48,19 +48,6 @@ const FormContacto = () => {
     })
   }
 
-  // const oportunidadOptions = [
-  //   'Miami',
-  //   'Orlando',
-  //   'Baltimore',
-  //   'Birmingham',
-  //   'Fondo de inversión (R. Variable)',
-  //   'Otros mercados',
-  //   'Fondo de inversión (R. Fija)',
-  //   'Hipotecas',
-  //   'Storage',
-  //   'Otras consultas'
-  // ]
-
   const Error = () => {
     return <div className='text-sm mt-2'>Por favor complete este campo</div>
   }
@@ -87,6 +74,7 @@ const FormContacto = () => {
             <div>
               <Input
                 type='text'
+                style='w-full'
                 placeholder='Nombre y Apellido'
                 register={register('name', { required: true })}
               />
@@ -119,6 +107,7 @@ const FormContacto = () => {
               <Input
                 type='email'
                 placeholder='Email'
+                style='w-full'
                 register={register('email', { required: true })}
               />
               {errors.email && <Error />}

@@ -10,6 +10,7 @@ import { SocaloBottom } from '../../ui'
 import Slider from './Slider'
 import useFetch from '../../hooks/useFetch'
 import InversionesInfo from './InversionesInfo'
+import Image from '../../components/Image'
 
 const Index = () => {
   const [path] = useLocation()
@@ -32,10 +33,12 @@ const Index = () => {
   return (
     <Layout>
       <header className='h-[33vh] relative'>
-        <img
-          src='https://marianoarias.soy/sites/wom-backend/images-static/inversiones.jpg'
-          className='w-full h-full object-cover object-center'
-        />
+        {!loading && (
+          <Image
+            src={data[0].image}
+            alt={title}
+          />
+        )}
       </header>
 
       <section>

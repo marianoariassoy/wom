@@ -59,29 +59,26 @@ const FormReuniones = () => {
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className='flex flex-col gap-3 items-start justify-start'>
-            <div className='row flex flex-col lg:flex-row gap-3 w-full'>
-              <div>
-                <Input
-                  type='text'
-                  placeholder='Nombre y Apellido'
-                  style='lg:w-80'
-                  register={register('name', { required: true })}
-                />
-                {errors.name && <Error />}
-              </div>
-              <div>
-                <Input
-                  type='email'
-                  style='lg:w-80'
-                  placeholder='Email'
-                  register={register('email', { required: true })}
-                />
-                {errors.email && <Error />}
-              </div>
+            <div className='row flex flex-col lg:flex-row gap-3 w-full lg:w-1/2'>
+              <Input
+                type='text'
+                placeholder='Nombre y Apellido'
+                style='w-full'
+                register={register('name', { required: true })}
+              />
+              {errors.name && <Error />}
+
+              <Input
+                type='email'
+                style='w-full'
+                placeholder='Email'
+                register={register('email', { required: true })}
+              />
+              {errors.email && <Error />}
             </div>
-            <div className='row'>
+            <div className='row w-full lg:w-1/2'>
               <div className='font-bold text-sm my-3'>Número telefónico</div>
-              <div className='flex gap-3 items-start flex-wrap'>
+              <div className='flex gap-3 flex-wrap'>
                 <PhoneInput
                   defaultCountry='ar'
                   value={phone}
@@ -96,7 +93,7 @@ const FormReuniones = () => {
                 />
                 <Input
                   type='text'
-                  style='grow basis-0 lg:w-80 lg:grow-0 lg:basis-auto'
+                  style='grow basis-0'
                   placeholder='Número'
                   register={register('phone', { required: true })}
                 />

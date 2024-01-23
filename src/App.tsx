@@ -3,6 +3,7 @@ import Home from './pages/home'
 import Faqs from './pages/faqs'
 import OtrosMercados from './pages/inversiones/OtrosMercados'
 import Inversiones from './pages/inversiones'
+import Destacadas from './pages/destacadas'
 import Terminos from './pages/terminos'
 import Error from './pages/error'
 
@@ -40,6 +41,10 @@ function App() {
       <Route
         path='/renta-fija/:title/:id'
         component={Inversiones}
+      />
+      <Route
+        path='/inversiones-destacadas/:title/:id'
+        component={Destacadas}
       />
       <Route
         path='/faqs'
