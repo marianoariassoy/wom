@@ -12,7 +12,7 @@ const Select = ({ options, register, name }) => {
         {name}
       </option>
       {options.map((item, index) => {
-        return <option key={index}>{item.title}</option>
+        return <option key={index}>{item}</option>
       })}
     </select>
   )

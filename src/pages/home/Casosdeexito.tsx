@@ -10,7 +10,7 @@ const Casosdeexito = () => {
   const { data, loading } = useFetch(`/casosdeexito`)
 
   const sliderProperties = {
-    autoplay: true,
+    autoplay: false,
     transitionDuration: 250,
     indicators: false,
     arrows: true,

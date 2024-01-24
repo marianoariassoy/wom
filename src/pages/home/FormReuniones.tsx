@@ -27,21 +27,23 @@ const FormReuniones = () => {
   const onSubmit = (data: Inputs) => {
     setSending(true)
     const sender = {
-      to: ' ',
-      from: ' ',
+      to: 'informes@wom-latam.com',
+      from: 'informes@wom-latam.com',
       from_name: 'WOM Latam',
       subject: 'Solicitud de Reunión'
     }
 
-    axios.post('', { ...data, phone, ...sender }).then(data => {
-      if (data.data === 'success') {
-        setSended(true)
-        setSending(false)
-      } else {
-        setError(true)
-        setSending(false)
-      }
-    })
+    axios
+      .post('http://marianoarias.soy/sites/wom-backend/send-email-reuniones.php', { ...data, phone, ...sender })
+      .then(data => {
+        if (data.data === 'success') {
+          setSended(true)
+          setSending(false)
+        } else {
+          setError(true)
+          setSending(false)
+        }
+      })
   }
 
   const Error = () => {
@@ -53,9 +55,7 @@ const FormReuniones = () => {
       {error ? (
         <span className='text-xl font-bold font-secondary'>Se produjo un error al enviar el mensaje</span>
       ) : sended ? (
-        <span className='text-xl font-bold font-secondary'>
-          ¡Su mensaje fue enviado! Gracias por contactarte con nosotros.
-        </span>
+        <span className='text-xl font-bold font-secondary'>¡Su solicitud fue enviada con exito!</span>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className='flex flex-col gap-3 items-start justify-start'>
@@ -101,13 +101,13 @@ const FormReuniones = () => {
                   type='text'
                   placeholder='Cód. Area'
                   style='w-28'
-                  register={register('cod-area', { required: true })}
+                  register={register('codArea', { required: true })}
                 />
                 <Input
                   type='text'
                   style='grow basis-0'
                   placeholder='Número'
-                  register={register('phone', { required: true })}
+                  register={register('phoneNumber', { required: true })}
                 />
               </div>
             </div>

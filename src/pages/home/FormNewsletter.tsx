@@ -7,8 +7,9 @@ import { PhoneInput } from 'react-international-phone'
 import 'react-international-phone/style.css'
 
 interface Inputs {
+  name: string
   email: string
-  phone: string
+  message: string
 }
 
 const FormNewsletter = () => {
@@ -17,30 +18,40 @@ const FormNewsletter = () => {
   const [error, setError] = useState(false)
   const [phone, setPhone] = useState('')
 
-  const { register, handleSubmit } = useForm()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm()
 
   const onSubmit = (data: Inputs) => {
     setSending(true)
     const sender = {
-      to: ' ',
-      from: ' ',
+      to: 'informes@wom-latam.com',
+      from: 'informes@wom-latam.com',
       from_name: 'WOM Latam',
       subject: 'Suscripción'
     }
 
-    axios.post('', { ...data, phone, ...sender }).then(data => {
-      if (data.data === 'success') {
-        setSended(true)
-        setSending(false)
-      } else {
-        setError(true)
-        setSending(false)
-      }
-    })
+    axios
+      .post('http://marianoarias.soy/sites/wom-backend/send-email-newsletter.php', { ...data, phone, ...sender })
+      .then(data => {
+        if (data.data === 'success') {
+          setSended(true)
+          setSending(false)
+        } else {
+          setError(true)
+          setSending(false)
+        }
+      })
+  }
+
+  const Error = () => {
+    return <div className='text-sm mt-2'>Por favor complete este campo</div>
   }
 
   return (
-    <div className='row'>
+    <section>
       {error ? (
         <div className='text-xl font-bold font-secondary text-center text-primary'>
           Se produjo un error al enviar el mensaje
@@ -49,19 +60,39 @@ const FormNewsletter = () => {
         <div className='text-xl font-bold font-secondary text-center text-primary'>Muchas gracias por suscribirse.</div>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className='flex flex-col gap-3  w-3/4'>
-            <div>
-              <div className='font-bold text-sm my-3 uppercase pl-3'>Por Email</div>
-              <Input
-                type='email'
-                placeholder='Por Email'
-                style='w-full'
-                register={register('email')}
-              />
+          <div className='flex flex-col gap-3 w-3/4 m-auto'>
+            <div className='row flex flex-col lg:flex-row gap-3 w-full'>
+              <div>
+                <Input
+                  type='text'
+                  placeholder='Nombre'
+                  style='w-full'
+                  register={register('name', { required: true })}
+                />
+                {errors.name && <Error />}
+              </div>
+              <div>
+                <Input
+                  type='text'
+                  placeholder='Apellido'
+                  style='w-full'
+                  register={register('lastname', { required: true })}
+                />
+                {errors.lastname && <Error />}
+              </div>
+              <div>
+                <Input
+                  type='email'
+                  style='w-full'
+                  placeholder='Email'
+                  register={register('email', { required: true })}
+                />
+                {errors.email && <Error />}
+              </div>
             </div>
-            <div>
-              <div className='font-bold text-sm my-3 uppercase pl-3'>Por WhatsApp</div>
-              <div className='flex gap-3 items-start'>
+            <div className='row w-full'>
+              <div className='font-bold text-sm my-3'>Número de WhatsApp</div>
+              <div className='flex gap-3 flex-wrap'>
                 <PhoneInput
                   defaultCountry='ar'
                   value={phone}
@@ -72,23 +103,25 @@ const FormNewsletter = () => {
                   type='text'
                   placeholder='Cód. Area'
                   style='w-28'
-                  register={register('cod-area')}
+                  register={register('codArea', { required: true })}
                 />
                 <Input
                   type='text'
-                  style='grow basis-0 lg:w-80 lg:grow-0 lg:basis-auto'
+                  style='grow basis-0'
                   placeholder='Número'
-                  register={register('phone')}
+                  register={register('phoneNumber', { required: true })}
                 />
               </div>
             </div>
-            <div className='w-48 flex justify-center'>
-              {sending ? <BeatLoader className='mt-6' /> : <Button color='bg-primary'>Suscribirse</Button>}
+            <div className='row'>
+              <div className='inline-block'>
+                {sending ? <BeatLoader className='mt-6' /> : <Button color='bg-primary'>Suscribirse</Button>}
+              </div>
             </div>
           </div>
         </form>
       )}
-    </div>
+    </section>
   )
 }
 

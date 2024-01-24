@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form'
 import BeatLoader from 'react-spinners/BeatLoader'
 import { PhoneInput } from 'react-international-phone'
 import 'react-international-phone/style.css'
-import useFetch from '../../hooks/useFetch'
 
 interface Inputs {
   oportunidad: string
@@ -20,7 +19,6 @@ const FormContacto = () => {
   const [sending, setSending] = useState(false)
   const [error, setError] = useState(false)
   const [phone, setPhone] = useState('')
-  const { data: inversiones, loading: loadingInversiones } = useFetch(`/inversiones`)
 
   const {
     register,
@@ -31,33 +29,49 @@ const FormContacto = () => {
   const onSubmit = (data: Inputs) => {
     setSending(true)
     const sender = {
-      to: ' ',
-      from: ' ',
+      to: 'informes@wom-latam.com',
+      from: 'informes@wom-latam.com',
       from_name: 'WOM Latam',
       subject: 'Contacto'
     }
 
-    axios.post('', { ...data, phone, ...sender }).then(data => {
-      if (data.data === 'success') {
-        setSended(true)
-        setSending(false)
-      } else {
-        setError(true)
-        setSending(false)
-      }
-    })
+    axios
+      .post('http://marianoarias.soy/sites/wom-backend/send-email-contacto.php', { ...data, phone, ...sender })
+      .then(data => {
+        if (data.data === 'success') {
+          setSended(true)
+          setSending(false)
+        } else {
+          setError(true)
+          setSending(false)
+        }
+      })
   }
 
   const Error = () => {
     return <div className='text-sm mt-2'>Por favor complete este campo</div>
   }
 
+  const options = [
+    'Miami',
+    'Orlando',
+    'Baltimore',
+    'Birmingham',
+    'Fondo de inversión (R. Variable)',
+    'Franquicias',
+    'Otros mercados',
+    'Fondo de inversión (R. Fija)',
+    'Hipotecas',
+    'Storage',
+    'Otras consultas'
+  ]
+
   return (
     <div className='row'>
       {error ? (
-        <div className='text-xl font-bold font-secondary text-center'>Se produjo un error al enviar el mensaje</div>
+        <div className='text-xl font-bold font-secondary'>Se produjo un error al enviar el mensaje</div>
       ) : sended ? (
-        <div className='text-xl font-bold font-secondary text-center'>
+        <div className='text-xl font-bold font-secondary'>
           ¡Su mensaje fue enviado! Gracias por contactarte con nosotros.
         </div>
       ) : (
@@ -65,11 +79,11 @@ const FormContacto = () => {
           <div className='flex flex-col gap-y-3'>
             <div>
               <Select
-                register={register('oportunidad', { required: true })}
+                register={register('subject', { required: true })}
                 name='Oportunidad de Inversión'
-                options={loadingInversiones ? [] : inversiones}
+                options={options}
               />
-              {errors.oportunidad && <Error />}
+              {errors.subject && <Error />}
             </div>
             <div>
               <Input
@@ -102,14 +116,15 @@ const FormContacto = () => {
                   type='text'
                   placeholder='Cód. Area'
                   style='w-28'
-                  register={register('cod-area')}
+                  register={register('codArea')}
                 />
                 <Input
                   type='text'
                   style='grow basis-0'
                   placeholder='Número'
-                  register={register('phone')}
+                  register={register('phoneNumber', { required: true })}
                 />
+                {errors.phoneNumber && <Error />}
               </div>
             </div>
             <div>

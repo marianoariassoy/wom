@@ -41,7 +41,7 @@ const Index = () => {
       </header>
 
       <section className='relative'>
-        <div className='absolute w-full lg:w-1/2 h-full bg-secondary -z-10'></div>
+        {!loading && <div className='absolute w-full lg:w-1/2 h-full bg-secondary -z-10'></div>}
 
         <div className='w-full m-auto max-w-6xl px-6 flex flex-col lg:flex-row gap-12'>
           <div className='col bg-secondary pt-20'>
@@ -51,15 +51,14 @@ const Index = () => {
           <div className='col py-12 lg:py-20 bg-white px-6 lg:pl-12 pb-6'>
             {loading ? null : data ? (
               <section className='flex flex-col gap-6'>
-                <div className='flex gap-x-3 items-center text-2xl mb-3'>
-                  <h1 className='font-secondary font-bold text-primary'>
-                    {title} | <span className='text-gray'>{data[0].subtitle}</span>
-                  </h1>
+                <div className='text-2xl mb-3'>
+                  <h1 className='font-secondary font-bold text-primary'>{title}</h1>
+                  <h2 className='font-secondary font-bold text-gray'>{data[0].subtitle}</h2>
                 </div>
 
                 {data[0].bajada && (
                   <div>
-                    <p className='font-bold text-gray pl-8 whitespace-break-spaces'>{data[0].bajada}</p>
+                    <p className='font-bold text-gray whitespace-break-spaces'>{data[0].bajada}</p>
                   </div>
                 )}
 
@@ -70,7 +69,7 @@ const Index = () => {
                 />
 
                 <div className='mb-3'>
-                  <p className='font-bold text-gray pl-8 whitespace-break-spaces'>{data[0].text}</p>
+                  <p className='font-bold text-gray whitespace-break-spaces'>{data[0].text}</p>
                 </div>
 
                 {data[0].pdf && (
@@ -98,7 +97,7 @@ const Index = () => {
       </section>
 
       <section>
-        <div className='absolute w-full lg:w-1/2 h-full bg-secondary -z-10'></div>
+        {!loading && <div className='absolute w-full lg:w-1/2 h-full bg-secondary -z-10'></div>}
 
         <div className='w-full m-auto max-w-6xl px-6'>
           <SocaloBottom color='bg-tertiary'> </SocaloBottom>

@@ -16,7 +16,7 @@ const Index = () => {
   const [path] = useLocation()
   const titleUrl = path.split('/')[2]
   const id = path.split('/')[3]
-  const { data, loading } = useFetch(`/inversiones/${titleUrl}`)
+  const { data, loading, setLoading } = useFetch(`/inversiones/${titleUrl}`)
   const color = path.split('/')[1] === 'renta-variable' ? 'text-secondary' : 'text-light'
   let title = 'Inversiones'
 
@@ -25,10 +25,10 @@ const Index = () => {
       title = data[0].title
     }
   }
-
   useEffect(() => {
+    setLoading(true)
     window.scrollTo(0, 0)
-  }, [])
+  }, [path, setLoading])
 
   return (
     <Layout>
