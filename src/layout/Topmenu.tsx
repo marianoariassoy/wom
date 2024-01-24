@@ -6,16 +6,16 @@ const Topmenu = () => {
     <div className='bg-primary items-center gap-x-20 justify-end h-11 text-sm flex'>
       <div className='gap-x-12 hidden lg:flex'>
         <a
-          href='tel:549110867777'
+          href='tel:5493515056688'
           className='text-light hover:text-white'
         >
-          ARG 54911 0867777
+          ARG +54 9 3515 05-6688
         </a>
         <a
-          href='tel:305624098'
+          href='tel:19546690141'
           className='text-light hover:text-white'
         >
-          USA 305 624098
+          USA +1 (954) 669-0141
         </a>
       </div>
       <div className='text-white mr-20'>
