@@ -8,6 +8,7 @@ import { SocaloBottom } from '../../ui'
 import useFetch from '../../hooks/useFetch'
 import Loader from '../../components/Loader'
 import ItemOtrosMercados from './ItemOtrosMercados'
+import Image from '../../components/Image'
 
 const OtrosMercados = () => {
   const { data, loading } = useFetch(`/inversiones/otros-mercados`)
@@ -19,10 +20,12 @@ const OtrosMercados = () => {
   return (
     <Layout>
       <header className='h-[33vh] relative'>
-        <img
-          src='https://marianoarias.soy/sites/wom-backend/images-static/inversiones.jpg'
-          className='w-full h-full object-cover object-center'
-        />
+        {!loading && (
+          <Image
+            src={data[0].image}
+            alt=''
+          />
+        )}
       </header>
 
       <section>

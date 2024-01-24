@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'wouter'
 import Nav from './Nav'
 import Topmenu from './Topmenu'
-import Logo from '../assets/images/logo.svg'
+import Logo from '../assets/images/logowom.svg'
 
 const Header = () => {
   const [location] = useLocation()
@@ -9,13 +9,13 @@ const Header = () => {
   return (
     <div className='w-full'>
       <div className='max-w-6xl m-auto px-6 flex justify-between'>
-        <div className='bg-white pb-6 lg:pb-0 pt-4 px-10 lg:px-14 absolute'>
+        <div className='bg-white pb-6 lg:pb-0 pt-4 px-6 lg:px-10 absolute'>
           <Link href={`${location === '/' ? '#hero' : '/'}`}>
             <a className={`${location === '/' ? 'scroll' : ''}`}>
               <img
                 src={Logo}
                 alt='Logo'
-                className='w-24 lg:w-auto hover:opacity-75 transition-all'
+                className='h-24 hover:opacity-75 transition-all'
               />
             </a>
           </Link>
