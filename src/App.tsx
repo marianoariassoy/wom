@@ -6,6 +6,7 @@ import Inversiones from './pages/inversiones'
 import Destacadas from './pages/destacadas'
 import Terminos from './pages/terminos'
 import Error from './pages/error'
+import Newsletter from './pages/contacto'
 
 function App() {
   return (
@@ -53,6 +54,10 @@ function App() {
       <Route
         path='/terminos-y-condiciones'
         component={Terminos}
+      />
+      <Route
+        path='/newsletter'
+        component={Newsletter}
       />
       <Route component={Error} />
     </Switch>
