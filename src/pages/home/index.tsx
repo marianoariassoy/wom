@@ -18,6 +18,7 @@ const Index = () => {
   const [location] = useLocation()
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     if (location === '/contacto' || location === '/casos' || location === '/guia' || location === '/nosotros') {
       setTimeout(() => {
         const targetElement = document.querySelector(`#${location.split('/').pop()}`) as HTMLElement
@@ -28,8 +29,11 @@ const Index = () => {
         })
       }, 1000)
     }
-    scroll()
   }, [location])
+
+  useEffect(() => {
+    scroll()
+  }, [])
 
   return (
     <Layout>

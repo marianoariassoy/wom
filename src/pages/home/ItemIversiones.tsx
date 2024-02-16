@@ -39,7 +39,7 @@ const ItemIversiones = ({ data: { id, title, type, rentability, from, image } }:
           </h3>
         </div>
         <p className='text-gray'>
-          Rentabilidad estimada
+          Rentabilidad {type === 1 ? 'variable' : ''}
           <span className={`block font-semibold text-xl ${type === 1 ? 'text-secondary' : 'text-light'}`}>
             {rentability}
           </span>

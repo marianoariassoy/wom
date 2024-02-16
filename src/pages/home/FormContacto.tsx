@@ -36,7 +36,7 @@ const FormContacto = () => {
     }
 
     axios
-      .post('http://marianoarias.soy/sites/wom-backend/send-email-contacto.php', { ...data, phone, ...sender })
+      .post('https://marianoarias.soy/sites/wom-backend/send-email-contacto.php', { ...data, phone, ...sender })
       .then(data => {
         if (data.data === 'success') {
           setSended(true)

@@ -25,7 +25,7 @@ const items = [
 
 const Social = () => {
   return (
-    <nav className='flex gap-x-4 lg:gap-x-8 items-center'>
+    <nav className='flex gap-x-3 lg:gap-x-8 items-center'>
       {items.map((item, index) => (
         <a
           key={index}

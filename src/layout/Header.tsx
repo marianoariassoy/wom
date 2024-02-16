@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <div className='w-full'>
       <div className='max-w-6xl m-auto px-6 flex justify-between'>
-        <div className='bg-white pb-6 lg:pb-0 pt-4 px-6 lg:px-10 absolute'>
+        <div className='bg-white pb-6 lg:pb-0 pt-4 px-4  lg:px-10 absolute'>
           <Link href={`${location === '/' ? '#hero' : '/'}`}>
             <a className={`${location === '/' ? 'scroll' : ''}`}>
               <img

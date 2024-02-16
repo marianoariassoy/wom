@@ -1,4 +1,5 @@
 import { Route, Switch } from 'wouter'
+import ReactGA from 'react-ga4'
 import Home from './pages/home'
 import Faqs from './pages/faqs'
 import OtrosMercados from './pages/inversiones/OtrosMercados'
@@ -9,6 +10,8 @@ import Error from './pages/error'
 import Newsletter from './pages/contacto'
 
 function App() {
+  ReactGA.initialize('G-M0L817SPDB')
+
   return (
     <Switch>
       <Route

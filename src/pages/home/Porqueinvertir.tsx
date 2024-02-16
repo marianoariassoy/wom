@@ -12,7 +12,7 @@ const Porqueinvertir = () => {
     >
       <div className='w-full m-auto max-w-6xl pt-20 px-6'>
         <h1 className='text-white text-center font-secondary text-2xl lg:text-3xl mb-12 font-bold'>
-          ¿Por qué invertir en EE.UU.?
+          ¿Por qué invertir en Real Estate en EE.UU.?
         </h1>
         {!loading && (
           <div className='grid lg:grid-cols-3 gap-6 mb-20'>

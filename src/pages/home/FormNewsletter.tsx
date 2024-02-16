@@ -26,24 +26,16 @@ const FormNewsletter = () => {
 
   const onSubmit = (data: Inputs) => {
     setSending(true)
-    const sender = {
-      to: 'informes@wom-latam.com',
-      from: 'informes@wom-latam.com',
-      from_name: 'WOM Latam',
-      subject: 'Suscripción'
-    }
 
-    axios
-      .post('http://marianoarias.soy/sites/wom-backend/send-email-newsletter.php', { ...data, phone, ...sender })
-      .then(data => {
-        if (data.data === 'success') {
-          setSended(true)
-          setSending(false)
-        } else {
-          setError(true)
-          setSending(false)
-        }
-      })
+    axios.post('https://marianoarias.soy/sites/wom-backend/api/suscripciones', { ...data, phone }).then(data => {
+      if (data.data.success === true) {
+        setSended(true)
+        setSending(false)
+      } else {
+        setError(true)
+        setSending(false)
+      }
+    })
   }
 
   const Error = () => {
