@@ -29,7 +29,6 @@ const Slider = ({ id }) => {
       setcurrentIndex(currentIndex - 1)
     }
   }
-
   const sliderProperties = {
     autoplay: false,
     transitionDuration: 250,
@@ -68,7 +67,7 @@ const Slider = ({ id }) => {
 
   return (
     <section>
-      {!loading && data.length && (
+      {!loading && data.length > 0 && (
         <div className='mb-20'>
           <Slide
             {...sliderProperties}

@@ -48,7 +48,7 @@ const Casosdeexito = () => {
   return (
     <section id='casos'>
       <div className='w-full m-auto max-w-6xl pt-20 px-6'>
-        <h1 className='font-secondary text-2xl lg:text-3xl mb-12'>Casos de éxito</h1>
+        <h1 className='font-bold text-2xl lg:text-3xl mb-12'>Casos de éxito</h1>
         <div className='mb-20'>
           {loading ? (
             <Loader />
@@ -66,7 +66,7 @@ const Casosdeexito = () => {
             </Slide>
           )}
         </div>
-        <SocaloBottom color='bg-tertiary'> </SocaloBottom>
+        <SocaloBottom color='bg-primary'> </SocaloBottom>
       </div>
     </section>
   )

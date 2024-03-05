@@ -3,7 +3,6 @@ import { HeadProvider, Title } from 'react-head'
 import { useLocation } from 'wouter'
 import Layout from '../../layout/Layout'
 import Contacto from '../home/Contacto'
-import Newsletter from '../home/Newsletter'
 import { SocaloBottom } from '../../ui'
 import useFetch from '../../hooks/useFetch'
 import Image from '../../components/Image'
@@ -52,8 +51,8 @@ const Index = () => {
             {loading ? null : data ? (
               <section className='flex flex-col gap-6'>
                 <div className='text-2xl mb-3'>
-                  <h1 className='font-secondary font-bold text-primary'>{title}</h1>
-                  <h2 className='font-secondary font-bold text-gray'>{data[0].subtitle}</h2>
+                  <h1 className='font-bold text-primary'>{title}</h1>
+                  <h2 className='font-bold text-gray'>{data[0].subtitle}</h2>
                 </div>
 
                 {data[0].bajada && (
@@ -90,7 +89,7 @@ const Index = () => {
                 <Slider id={id} />
               </section>
             ) : (
-              <span className='font-secondary text-xl'>No se encontro la inversión</span>
+              <span className='text-xl'>No se encontro la inversión</span>
             )}
           </div>
         </div>
@@ -100,11 +99,10 @@ const Index = () => {
         {!loading && <div className='absolute w-full lg:w-1/2 h-full bg-secondary -z-10'></div>}
 
         <div className='w-full m-auto max-w-6xl px-6'>
-          <SocaloBottom color='bg-tertiary'> </SocaloBottom>
+          <SocaloBottom color='bg-primary'> </SocaloBottom>
         </div>
       </section>
 
-      <Newsletter />
       <Contacto />
 
       <HeadProvider>

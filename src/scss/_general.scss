@@ -22,11 +22,6 @@ body {
 a {
   color: currentColor;
 }
-
-.font-secondary {
-  font-family: 'Besley', serif;
-}
-
 .text-primary {
   color: $color-primary;
 }
@@ -55,7 +50,6 @@ a {
 .bg-tertiary {
   background-color: $color-tertiary;
 }
-
 .bg-light-primary {
   background-color: rgba($color: #254a61, $alpha: 0.35);
 }

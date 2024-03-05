@@ -12,7 +12,7 @@ const ItemOtrosMercados = ({ data: { id, title } }) => {
         <div className='text-secondary'>
           <Pin />
         </div>
-        <h1 className='font-secondary font-bold text-primary'>{title}</h1>
+        <h1 className='font-bold text-primary'>{title}</h1>
       </div>
       {loading ? (
         <Loader />
@@ -31,7 +31,7 @@ const ItemOtrosMercados = ({ data: { id, title } }) => {
       )}
       {!loading && data.filter(item => item.type === 2).length > 0 && (
         <div className='mt-12'>
-          <h1 className='font-secondary font-bold text-primary text-xl mb-6'>¿Por qué invertir en {title}?</h1>
+          <h1 className='font-bold text-primary text-xl mb-6'>¿Por qué invertir en {title}?</h1>
           <div className='flex flex-col gap-y-3 text-gray'>
             {data
               .filter(item => item.type === 2)

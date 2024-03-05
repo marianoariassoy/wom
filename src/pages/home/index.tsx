@@ -8,7 +8,6 @@ import Destacadas from './Destacadas'
 import Guia from './Guia'
 import Hero from './Hero'
 import Inversiones from './Inversiones'
-import Newsletter from './Newsletter'
 import Nosotros from './Nosotros'
 import Porqueinvertir from './Porqueinvertir'
 import Reuniones from './Reuniones'
@@ -45,7 +44,6 @@ const Index = () => {
       <Guia />
       <Reuniones />
       <Casosdeexito />
-      <Newsletter />
       <Contacto />
       <HeadProvider>
         <Title>WOM Latam</Title>

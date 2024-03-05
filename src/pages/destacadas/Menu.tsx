@@ -8,7 +8,7 @@ const Menu = () => {
 
   return (
     <section className='lg:w-80'>
-      <h1 className='text-white font-bold font-secondary text-2xl mb-10'>Inversiones destacadas</h1>
+      <h1 className='text-white font-bold text-2xl mb-10'>Inversiones destacadas</h1>
 
       <div className='flex flex-col gap-y-3'>
         {data.map((data, index) => (

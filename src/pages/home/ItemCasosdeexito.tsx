@@ -19,7 +19,7 @@ const ItemCasosdeexito = ({ data: { name, title, text, image } }: Props) => {
           />
         </div>
         <div>
-          <h1 className='font-secondary font-medium text-xl mb-1'>{name}</h1>
+          <h1 className='font-medium text-xl mb-1'>{name}</h1>
           <p className='text-gray text-sm font-medium'>{title}</p>
         </div>
       </div>

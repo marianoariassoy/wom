@@ -5,7 +5,6 @@ import { SocaloBottom } from '../../ui'
 import { DownBig } from '../../components/icons'
 import ItemFaqs from './ItemFaqs'
 import Contacto from '../home/Contacto'
-import Newsletter from '../home/Newsletter'
 import useFetch from '../../hooks/useFetch'
 import Loader from '../../components/Loader'
 
@@ -34,7 +33,7 @@ const Index = () => {
       <section className='bg-gray'>
         <div className='w-full m-auto max-w-6xl px-6'>
           <div className='flex flex-col gap-y-6 items-center mb-12'>
-            <h1 className='text-2xl lg:text-3xl text-secondary font-secondary font-bold'>FAQs</h1>
+            <h1 className='text-2xl lg:text-3xl text-secondary font-bold'>FAQs</h1>
             <div className='text-black/25'>
               <DownBig />
             </div>
@@ -55,11 +54,10 @@ const Index = () => {
             </div>
           )}
 
-          <SocaloBottom color='bg-tertiary'> </SocaloBottom>
+          <SocaloBottom color='bg-primary'> </SocaloBottom>
         </div>
       </section>
 
-      <Newsletter />
       <Contacto />
 
       <HeadProvider>

@@ -5,7 +5,6 @@ import Layout from '../../layout/Layout'
 import { Pin } from '../../components/icons'
 import Menu from './Menu'
 import Contacto from '../home/Contacto'
-import Newsletter from '../home/Newsletter'
 import { SocaloBottom } from '../../ui'
 import Slider from './Slider'
 import useFetch from '../../hooks/useFetch'
@@ -54,7 +53,7 @@ const Index = () => {
                   <div className={color}>
                     <Pin />
                   </div>
-                  <h1 className='font-secondary font-bold text-primary'>{title}</h1>
+                  <h1 className='font-bold text-primary'>{title}</h1>
                 </div>
 
                 <InversionesInfo
@@ -64,7 +63,7 @@ const Index = () => {
                 />
               </section>
             ) : (
-              <span className='font-secondary text-xl'>No se encontro la inversión</span>
+              <span className='text-xl'>No se encontro la inversión</span>
             )}
           </div>
         </div>
@@ -74,11 +73,10 @@ const Index = () => {
 
       <section>
         <div className='w-full m-auto max-w-6xl px-6'>
-          <SocaloBottom color='bg-tertiary'> </SocaloBottom>
+          <SocaloBottom color='bg-primary'> </SocaloBottom>
         </div>
       </section>
 
-      <Newsletter />
       <Contacto />
 
       <HeadProvider>

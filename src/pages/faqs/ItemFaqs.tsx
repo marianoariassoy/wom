@@ -15,7 +15,7 @@ const ItemFaqs = ({ data: { title, text } }: Props) => {
       onClick={() => setShow(!show)}
     >
       <div className='flex justify-between gap-x-4 items-center'>
-        <h1 className='font-secondary font-bold'>{title}</h1>
+        <h1 className='font-bold'>{title}</h1>
         <button className='text-3xl'>{show ? '-' : '+'}</button>
       </div>
       <div className={`text-gray p-3 text-sm bg-gray-100 my-3 ${show ? 'block' : 'hidden'}`}>

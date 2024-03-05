@@ -31,7 +31,7 @@ const Guia = () => {
       className='bg-gray'
     >
       <div className='w-full m-auto max-w-6xl px-6 pt-6 relative'>
-        <h1 className='text-2xl lg:text-3xl text-primary font-secondary text-center mb-16'>Guía para el inversor</h1>
+        <h1 className='text-2xl lg:text-3xl text-primary font-bold text-center mb-16'>Guía para el inversor</h1>
 
         {loading ? (
           <Loader />
@@ -50,7 +50,7 @@ const Guia = () => {
             <div className='col lg:w-3/5 lg:pr-20'>
               <div className='w-full shadow-main rounded-tl-3xl flex flex-col bg-white overflow-hidden pb-14'>
                 <div className='bg-primary text-white px-6 lg:pl-28 py-8'>
-                  <h1 className='text-xl font-secondary mb-3'>¿Cómo invertir?</h1>
+                  <h1 className='text-xl font-bold mb-3'>¿Cómo invertir?</h1>
                   <p className='text-sm'>Adquiere tu inmueble en Estados Unidos en forma sencilla</p>
                 </div>
                 <div className='px-6 lg:pl-28 pt-12'>
@@ -58,7 +58,7 @@ const Guia = () => {
                     {data.map((_, index) => (
                       <button
                         key={index}
-                        className={`flex items-center justify-center w-10 h-10 rounded-full font-secondary text-white bg-secondary-hover ${
+                        className={`flex items-center justify-center w-10 h-10 rounded-full font-bold text-white bg-secondary-hover ${
                           index === active ? 'bg-secondary' : 'bg-gray'
                         }`}
                         onClick={() => setActive(index)}
@@ -68,7 +68,7 @@ const Guia = () => {
                     ))}
                   </div>
                   <div className='min-h-[200px]'>
-                    <h1 className='text-xl font-secondary mb-3 text-secondary'>{data[active].title}</h1>
+                    <h1 className='text-xl font-bold mb-3 text-secondary'>{data[active].title}</h1>
                     <p className='text-sm text-wrap'>{data[active].text}</p>
                   </div>
                 </div>
@@ -91,9 +91,11 @@ const Guia = () => {
         </div>
       </div>
       <div className='px-6 py-12 flex items-center justify-center gap-x-4'>
-        <div className='text-primary font-secondary'>Consulta nuestras preguntas frecuentes</div>
+        <div className='text-primary font-medium'>Consulta nuestras preguntas frecuentes</div>
         <Link href='/faqs'>
-          <a className='text-white bg-secondary transition-all py-3 px-7 rounded-br-3xl hover:bg-black'>FAQs</a>
+          <a className='text-white bg-secondary font-bold transition-all py-3 px-7 rounded-br-3xl hover:bg-black'>
+            FAQs
+          </a>
         </Link>
       </div>
     </section>

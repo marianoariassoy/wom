@@ -26,7 +26,7 @@ const ItemDestacadas = ({ data: { id, title, description, image, banner } }: Pro
       <Link href={url}>
         <a className='absolute w-full h-full top-0 transition-all p-6 flex flex-col justify-end z-30 hover:bg-black/30 hover:backdrop-blur-sm cursor-pointer'>
           <div className='bg-white p-6 rounded-bl-3xl'>
-            <h2 className='text-primary font-secondary'>{title}</h2>
+            <h2 className='text-primary font-bold'>{title}</h2>
             <h2 className='text-black/50 font-medium text-sm uppercase'>{description}</h2>
           </div>
         </a>

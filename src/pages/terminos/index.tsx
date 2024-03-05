@@ -16,7 +16,7 @@ const Index = () => {
       <section className='mt-20'>
         <div className='w-full m-auto max-w-6xl px-6'>
           <div className='flex flex-col gap-y-6 items-center mb-12'>
-            <h1 className='text-2xl lg:text-3xl text-secondary font-secondary font-bold'>Terminos y Condiciones</h1>
+            <h1 className='text-2xl lg:text-3xl text-secondary font-bold'>Terminos y Condiciones</h1>
             <div className='text-black/25'>
               <DownBig />
             </div>
