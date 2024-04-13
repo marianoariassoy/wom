@@ -13,7 +13,7 @@ const Nosotros = () => {
       <div className='w-full m-auto max-w-6xl pt-12 px-6 flex flex-col lg:flex-row gap-x-6'>
         <div className='col lg:w-2/5 lg:pr-12'>
           <img
-            src='https://marianoarias.soy/sites/wom-backend/images-static/nosotros.jpg'
+            src='https://wom-latam.com/backend/images-static/nosotros.jpg'
             alt='Imagen sobre nosotros'
             className='w-full'
           />

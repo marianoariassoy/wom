@@ -21,7 +21,7 @@ const Index = () => {
               <DownBig />
             </div>
           </div>
-          <div className='text-sm mb-20 flex flex-col gap-y-6 [&>h1]:font-bold'>
+          <div className='text-sm mb-20 flex flex-col gap-y-6 [&>h1]:font-bold max-w-3xl m-auto'>
             <h1>BIENVENIDO A NUESTRO SITIO WEB</h1>
             <p>
               El presente sitio web es propiedad exclusiva de la empresa WORLD OF MANAGEMENT S.R.L. CUIT: 30-71132812-9

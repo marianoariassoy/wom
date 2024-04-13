@@ -6,6 +6,7 @@ import OtrosMercados from './pages/inversiones/OtrosMercados'
 import Inversiones from './pages/inversiones'
 import Destacadas from './pages/destacadas'
 import Terminos from './pages/terminos'
+import Politica from './pages/politica'
 import Error from './pages/error'
 import Newsletter from './pages/contacto'
 
@@ -57,6 +58,10 @@ function App() {
       <Route
         path='/terminos-y-condiciones'
         component={Terminos}
+      />
+      <Route
+        path='/politica-de-privacidad'
+        component={Politica}
       />
       <Route
         path='/newsletter'

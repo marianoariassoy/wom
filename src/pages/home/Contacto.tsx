@@ -35,18 +35,17 @@ const Contacto = () => {
       from_name: 'WOM Latam'
     }
 
-    axios
-      .post('https://marianoarias.soy/sites/wom-backend/send-email-contacto.php', { ...data, phone, ...sender })
-      .then(data => {
-        if (data.data === 'success') {
-          setSended(true)
-          setSending(false)
-        } else {
-          console.log(data)
-          setError(true)
-          setSending(false)
-        }
-      })
+    axios.post('https://wom-latam.com/backend/send-email-contacto.php', { ...data, phone, ...sender }).then(data => {
+      if (data.data === 'success') {
+        setSended(true)
+        setSending(false)
+        console.log(data)
+      } else {
+        console.log(data)
+        setError(true)
+        setSending(false)
+      }
+    })
   }
 
   const Error = () => {

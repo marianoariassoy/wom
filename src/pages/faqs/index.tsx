@@ -24,7 +24,7 @@ const Index = () => {
           </div>
         </div>
         <img
-          src='https://marianoarias.soy/sites/wom-backend/images-static/faqs.jpg'
+          src='https://wom-latam.com/backend/images-static/faqs.jpg'
           alt='Imagen para FAQs'
           className='w-full h-full object-cover object-center'
         />
