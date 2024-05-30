@@ -12,6 +12,7 @@ import Nosotros from './Nosotros'
 import Porqueinvertir from './Porqueinvertir'
 import Reuniones from './Reuniones'
 import scroll from '../../utils/scroll'
+import PopUp from './PopUp'
 
 const Index = () => {
   const [location] = useLocation()
@@ -36,6 +37,7 @@ const Index = () => {
 
   return (
     <Layout>
+      <PopUp />
       <Hero />
       <Destacadas />
       <Porqueinvertir />

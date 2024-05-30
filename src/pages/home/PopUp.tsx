@@ -1,0 +1,45 @@
+import FormPopUp from './FormPopUp'
+
+const PopUp = () => {
+  const closePopup = () => {
+    // window.localStorage.setItem('popup', 'true')
+    const popUp = document.getElementById('popUp')
+    popUp?.classList.add('hidden')
+  }
+  return (
+    <div
+      className='h-screen w-screen fixed top-0 left-0 bg-black/30 z-50 flex items-center justify-center fade-in p-6'
+      id='popUp'
+    >
+      <div className='bg-white p-6 lg:p-2 shadow-xl w-full max-w-3xl flex flex-col lg:flex-row items-center relative'>
+        <button
+          className='text-2xl absolute text-white bg-primary w-10 h-10 rounded-full border-2 border-white -top-3 -right-3 hover:bg-black'
+          onClick={closePopup}
+        >
+          X
+        </button>
+        <div className='w-full lg:w-2/3 text-center py-6 lg:p-16 flex flex-col gap-y-3'>
+          <div className='text-2xl lg:text-3xl'>
+            <h1 className='font-bold'>Suscríbete</h1>
+            <h2>a nuestro newsletter</h2>
+          </div>
+          <p className='text-sm'>
+            Gracias por visitar nuestro sitio web! ¿Quieres estar al día con las mejores oportunidades de inversión
+            inmobiliaria en EE.UU.? Entonces regístrate aquí. <br />
+            <br /> Prometemos que no saturaremos tu bandeja de entrada.
+          </p>
+          <FormPopUp />
+        </div>
+        <div className='w-full lg:w-1/3'>
+          <img
+            src='./images/popup-img.jpg'
+            alt='Image popup'
+            className='w-full aspect-video lg:aspect-auto'
+          />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default PopUp
