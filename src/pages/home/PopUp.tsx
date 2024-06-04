@@ -34,7 +34,12 @@ const PopUp = () => {
           <img
             src='./images/popup-img.jpg'
             alt='Image popup'
-            className='w-full aspect-video lg:aspect-auto'
+            className='w-full hidden lg:block'
+          />
+          <img
+            src='./images/popup-img-horizontal.jpg'
+            alt='Image popup'
+            className='w-full lg:hidden block'
           />
         </div>
       </div>
