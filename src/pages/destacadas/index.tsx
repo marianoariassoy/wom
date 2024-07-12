@@ -7,7 +7,6 @@ import { SocaloBottom } from '../../ui'
 import useFetch from '../../hooks/useFetch'
 import Image from '../../components/Image'
 import { Pdf } from '../../components/icons'
-
 import Menu from './Menu'
 import InversionesInfo from '../inversiones/InversionesInfo'
 import Slider from './Slider'
@@ -75,9 +74,11 @@ const Index = () => {
                   <a
                     href={data[0].pdf}
                     target='_blank'
-                    className='flex items-center pl-8'
+                    className='flex items-center'
                   >
-                    <span className='bg-primary py-1 px-3 text-white fobt-bold text-sm'>VER BROCHURE</span>
+                    <span className='bg-primary py-2 px-3 text-white font-bold text-sm hover:bg-black transition-colors'>
+                      VER BROCHURE
+                    </span>
                     <span className='bg-secondary p-3 rounded-md text-white'>
                       <span className='w-6 block'>
                         <Pdf />

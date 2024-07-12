@@ -18,7 +18,7 @@ const ItemIversiones = ({ data: { id, title, type, rentability, from, image } }:
   const url = `${type === 1 ? '/renta-variable' : '/renta-fija'}/${sanitizeTitleForURL(title)}/${id}`
 
   return (
-    <article className='grid grid-cols-2 rounded-bl-3xl overflow-hidden shadow-main lg:h-[300px] gap-x-3'>
+    <article className='grid grid-cols-2 rounded-bl-3xl overflow-hidden shadow-lg lg:h-[300px] gap-x-3'>
       <div className='col relative lg:h-[300px]'>
         <Link href={url}>
           <a className='absolute bg-black/30 backdrop-blur-sm w-full h-full z-20 top-0 left-0 transition-all  text-white text-4xl flex items-center justify-center opacity-0 hover:opacity-100'>

@@ -9,6 +9,8 @@ import Terminos from './pages/terminos'
 import Politica from './pages/politica'
 import Error from './pages/error'
 import Newsletter from './pages/contacto'
+import Propiedades from './pages/propiedades'
+import PropiedadesDetalles from './pages/propiedades/Detalles'
 
 function App() {
   ReactGA.initialize('G-M0L817SPDB')
@@ -66,6 +68,14 @@ function App() {
       <Route
         path='/newsletter'
         component={Newsletter}
+      />
+      <Route
+        path='/propiedades'
+        component={Propiedades}
+      />
+      <Route
+        path='/propiedades/:id'
+        component={PropiedadesDetalles}
       />
       <Route component={Error} />
     </Switch>

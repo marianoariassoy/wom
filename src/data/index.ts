@@ -52,3 +52,6 @@ export const menu = [
 
 export const alerts = ['Ninguna', 'Nuevo Lanzamiento', 'Renta Temporal', 'Últimas Unidades']
 export const inversion = ['Ninguna', 'Renta Variable', 'Renta Fija']
+
+export const cities = ['Miami', 'Orlando', 'Baltimore ']
+export const amount = ['Hasta 100.000', 'Hasta 200.000', 'Hasta 600.000 ', 'Más de 600.000']

@@ -39,9 +39,7 @@ const Contacto = () => {
       if (data.data === 'success') {
         setSended(true)
         setSending(false)
-        console.log(data)
       } else {
-        console.log(data)
         setError(true)
         setSending(false)
       }

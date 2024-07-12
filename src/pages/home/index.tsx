@@ -13,6 +13,7 @@ import Porqueinvertir from './Porqueinvertir'
 import Reuniones from './Reuniones'
 import scroll from '../../utils/scroll'
 import PopUp from './PopUp'
+import Propiedades from './Propiedades'
 
 const Index = () => {
   const [location] = useLocation()
@@ -40,6 +41,7 @@ const Index = () => {
       <PopUp />
       <Hero />
       <Destacadas />
+      <Propiedades />
       <Porqueinvertir />
       <Nosotros />
       <Inversiones />

@@ -41,7 +41,7 @@ const Index = () => {
       </header>
 
       <section>
-        <div className='w-full m-auto max-w-6xl px-6 flex flex-col lg:flex-row lg:gap-x-32 gap-y-12 items-start py-20'>
+        <div className='w-full mx-auto max-w-6xl px-6 flex flex-col lg:flex-row lg:gap-x-32 gap-y-12 items-start py-20'>
           <div className='col'>
             <Menu />
           </div>
@@ -55,7 +55,6 @@ const Index = () => {
                   </div>
                   <h1 className='font-bold text-primary'>{title}</h1>
                 </div>
-
                 <InversionesInfo
                   id={id}
                   color={color}

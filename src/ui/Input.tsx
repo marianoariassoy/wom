@@ -10,7 +10,7 @@ const Input = ({ type, placeholder, register, style }: Props) => {
     <input
       type={type}
       defaultChecked
-      className={`bg-white rounded-2xl px-4 h-14 text-black text-sm ${style}`}
+      className={`bg-white rounded-2xl px-4 h-14 text-black text-sm border border-gray ${style}`}
       placeholder={placeholder}
       {...register}
     />

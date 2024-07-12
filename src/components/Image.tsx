@@ -25,7 +25,7 @@ const ImageComponent = ({ src, alt }: Props) => {
     <img
       src={src}
       alt={alt}
-      className='fade-in h-full w-full object-cover object-center '
+      className='fade-in h-full w-full object-cover object-center'
     />
   )
 }

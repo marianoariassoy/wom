@@ -92,10 +92,11 @@ const Guia = () => {
       </div>
       <div className='px-6 py-12 flex items-center justify-center gap-x-4'>
         <div className='text-primary font-medium'>Consulta nuestras preguntas frecuentes</div>
-        <Link href='/faqs'>
-          <a className='text-white bg-secondary font-bold transition-all py-3 px-7 rounded-br-3xl hover:bg-black'>
-            FAQs
-          </a>
+        <Link
+          href='/faqs'
+          className='text-white bg-secondary font-bold transition-all py-3 px-7 rounded-br-3xl hover:bg-black'
+        >
+          FAQs
         </Link>
       </div>
     </section>

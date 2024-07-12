@@ -8,7 +8,7 @@ const PopUp = () => {
   }
   return (
     <div
-      className='h-screen w-screen fixed top-0 left-0 bg-black/30 z-50 flex items-center justify-center fade-in p-6'
+      className='fade-in-delay h-screen w-screen fixed top-0 left-0 bg-black/50 z-50 flex items-center justify-center p-6'
       id='popUp'
     >
       <div className='bg-white p-6 lg:p-2 shadow-xl w-full max-w-3xl flex flex-col lg:flex-row items-center relative'>

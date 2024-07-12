@@ -11,7 +11,7 @@ const Destacadas = () => {
 
   return (
     <section id='destacadas'>
-      <div className='w-full m-auto max-w-6xl pb-20 pt-6 px-6'>
+      <div className='w-full m-auto max-w-6xl lg:pb-20 pt-6 px-6'>
         <div className='flex flex-col gap-y-6 items-center mb-12'>
           <h1 className='text-2xl lg:text-3xl text-secondary font-bold'>Inversiones destacadas</h1>
           <a
