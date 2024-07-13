@@ -76,8 +76,8 @@ const Index = () => {
                     target='_blank'
                     className='flex items-center'
                   >
-                    <span className='bg-primary py-2 px-3 text-white font-bold text-sm hover:bg-black transition-colors'>
-                      VER BROCHURE
+                    <span className='bg-primary py-2 px-3 text-white font-medium text-sm hover:bg-black transition-colors'>
+                      BROCHURE
                     </span>
                     <span className='bg-secondary p-3 rounded-md text-white'>
                       <span className='w-6 block'>

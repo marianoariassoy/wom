@@ -12,7 +12,7 @@ interface Inputs {
   email: string
 }
 
-const Contacto = () => {
+const Contacto = ({ city, location }) => {
   const [sended, setSended] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState(false)
@@ -30,10 +30,10 @@ const Contacto = () => {
       to: 'informes@wom-latam.com',
       from: 'informes@wom-latam.com',
       from_name: 'WOM Latam',
-      subject: 'Consulta propiedades'
+      subject: `Consulta por ${city} ${location}`
     }
 
-    axios.post('https://wom-latam.com/backend/send-email-contacto.php', { ...data, phone, ...sender }).then(data => {
+    axios.post('https://wom-latam.com/backend/send-email-propiedades.php', { ...data, phone, ...sender }).then(data => {
       if (data.data === 'success') {
         setSended(true)
         setSending(false)
@@ -51,7 +51,9 @@ const Contacto = () => {
   return (
     <div className='row'>
       {error ? (
-        <div className='text-xl font-bold'>Se produjo un error al enviar el mensaje</div>
+        <div className='font-medium text-xl text-primary'>Se produjo un error al enviar el mensaje.</div>
+      ) : sended ? (
+        <div className='font-medium text-xl text-primary'>¡Su consulta fue enviada!</div>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className='flex flex-col gap-y-4'>
@@ -74,7 +76,6 @@ const Contacto = () => {
               {errors.email && <Error />}
             </div>
             <div>
-              {/* <div className='text-sm mb-3 pl-3 font-medium'>Número telefónico</div> */}
               <div className='w-full flex gap-x-2'>
                 <PhoneInput
                   defaultCountry='ar'
@@ -120,10 +121,12 @@ const Contacto = () => {
               {errors.message && <Error />}
             </div>
             <div className='flex gap-x-6 items-center justify-between'>
-              {sending ? <BeatLoader className='mt-6' /> : <Button color='bg-secondary-dark'>CONSULTAR</Button>}
+              {sending ? <BeatLoader className='mt-3' /> : <Button color='bg-secondary-dark'>CONSULTAR</Button>}
 
               <a
                 href='https://wa.me/19546690141'
+                target='_blank'
+                rel='noreferrer'
                 className='text-white rounded-2xl px-6 h-14 font-medium text-sm hover:bg-black transition-colors flex justify-center items-center bg-whatsapp gap-x-2'
               >
                 CHATEAR

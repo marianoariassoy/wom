@@ -1,8 +1,11 @@
 import { Link } from 'wouter'
 import Image from '../../components/Image'
 import { Down } from '../../components/icons'
+import { alertsMore } from '../../data'
 
 const Item = ({ data }) => {
+  const price = data.price.toLocaleString('de-DE')
+
   return (
     <article className='flex flex-col shadow-lg rounded-bl-3xl overflow-hidden relative'>
       <div className='aspect-video lg:aspect-[5/4] relative overflow-hidden bg-slate-100'>
@@ -13,17 +16,17 @@ const Item = ({ data }) => {
         </Link>
         <Image
           src={data.image}
-          alt={data.title}
+          alt={data.city}
         />
       </div>
       <div className='flex justify-between items-center px-6 py-3 bg-primary text-white '>
-        <span className='text-sm'>{data.from}</span>
-        <span className='font-medium'>{data.price}</span>
+        <span className='text-sm'>{data.subject}</span>
+        <span className='font-medium'>USD {price}</span>
       </div>
       <div className='flex flex-col justify-between gap-y-2 p-6'>
         <div className='min-h-20 border-b border-gray-300'>
-          <h2 className='text-primary font-semibold'>{data.title}</h2>
-          <p className='font-light text-gray text-sm'>{data.description}</p>
+          <h2 className='text-primary font-semibold'>{data.city}</h2>
+          <p className='font-light text-gray text-sm'>{data.location}</p>
         </div>
         <div>
           <Link
@@ -34,13 +37,15 @@ const Item = ({ data }) => {
           </Link>
         </div>
       </div>
-      <div
-        className='absolute w-full top-12 lg:top-6 -right-20 lg:-right-16 bg-secondary font-bold text-xs p-3 text-white z-30 text-center
-    rotate-[30deg]
-      '
-      >
-        VENDIDA
-      </div>
+      {data.alert && (
+        <div
+          className={`absolute w-full top-12 lg:top-10 -right-20 lg:-right-16 font-bold text-xs p-3 text-white z-30 text-center rotate-[30deg] uppercase ${
+            data.alert < 3 ? 'bg-secondary' : data.alert < 7 ? 'bg-light' : 'bg-primary'
+          }`}
+        >
+          {alertsMore[data.alert]}
+        </div>
+      )}
     </article>
   )
 }
