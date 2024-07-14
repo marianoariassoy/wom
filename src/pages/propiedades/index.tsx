@@ -16,7 +16,9 @@ const Index = () => {
 
   if (data) {
     dataFiltered = data.filter(
-      item => item.city.toLowerCase().includes(filterCity.toLowerCase()) && item.price >= filterPrice
+      item =>
+        (item.city.toLowerCase().includes(filterCity.toLowerCase()) || filterCity == '0') &&
+        (item.price <= filterPrice || filterPrice == 0)
     )
   }
 
@@ -43,7 +45,9 @@ const Index = () => {
               ))}
             </div>
           )}
-          {dataFiltered.length === 0 && <div className='text-center font-medium'>No se encontraron propiedades.</div>}
+          {!loading && dataFiltered.length === 0 && (
+            <div className='text-center font-medium'>No se encontraron propiedades.</div>
+          )}
           <div className='mt-20'>
             <SocaloBottom color='bg-primary'> </SocaloBottom>
           </div>

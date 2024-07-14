@@ -7,7 +7,7 @@ const Item = ({ data }) => {
   const price = data.price.toLocaleString('de-DE')
 
   return (
-    <article className='flex flex-col shadow-lg rounded-bl-3xl overflow-hidden relative'>
+    <article className='flex flex-col shadow-lg rounded-bl-3xl overflow-hidden relative fade-in-fast'>
       <div className='aspect-video lg:aspect-[5/4] relative overflow-hidden bg-slate-100'>
         <Link href={`/propiedades/${data.id}`}>
           <a className='absolute bg-black/30 backdrop-blur-sm w-full h-full z-20 top-0 left-0 transition-all  text-white text-4xl flex items-center justify-center opacity-0 hover:opacity-100'>

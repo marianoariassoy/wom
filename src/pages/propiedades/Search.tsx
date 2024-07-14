@@ -11,17 +11,17 @@ const Form = () => {
     <div className='w-full max-w-4xl mx-auto flex items-center flex-col lg:flex-row gap-4 mb-16'>
       <select
         name='city'
-        className='w-full cursor-pointer select bg-white rounded-2xl h-14 text-black text-sm appearance-none uppercase px-6 border border-gray-300 flex-grow font-medium '
+        className='w-full cursor-pointer select bg-white rounded-2xl h-14 text-black text-sm appearance-none uppercase px-6 border border-gray-300 flex-grow font-medium'
+        onChange={e => setFilterCity(e.target.value)}
       >
-        <option value='0'>Todas las ciudades</option>
+        <option value={''}>Todas las ciudades</option>
         {!loading &&
           data.map((item, index) => {
             return (
               <option
-                key={index}
                 value={item.title}
+                key={index}
                 {...(item.title === filterCity ? { selected: true } : {})}
-                onClick={() => setFilterCity(item.title)}
               >
                 {item.title}
               </option>
@@ -31,15 +31,15 @@ const Form = () => {
       <select
         name='amount'
         className='w-full cursor-pointer select bg-white rounded-2xl h-14 text-black text-sm appearance-none uppercase px-6 border border-gray-300 flex-grow font-medium'
+        onChange={e => setFilterPrice(e.target.value)}
       >
-        <option value='0'>Todos los montos</option>
+        <option value={''}>Todos los montos</option>
         {amount.map((item, index) => {
           return (
             <option
               key={index}
               value={item.value}
-              {...(item.value === filterPrice ? { selected: true } : {})}
-              onClick={() => setFilterPrice(item.value)}
+              {...(item.value === +filterPrice ? { selected: true } : {})}
             >
               {item.title}
             </option>
