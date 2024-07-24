@@ -15,9 +15,9 @@ const DetallesSeccion3 = ({ item }) => {
           </div>
         )}
 
-        <div className='flex flex-col gap-y-4'>
-          <h2 className='text-primary font-medium text-xl'>Street View</h2>
-          {item.streetview && (
+        {item.streetview && (
+          <div className='flex flex-col gap-y-4'>
+            <h2 className='text-primary font-medium text-xl'>Street View</h2>
             <iframe
               src={`https://www.google.com/maps/embed?pb=${item.streetview}`}
               width='100%'
@@ -25,8 +25,8 @@ const DetallesSeccion3 = ({ item }) => {
               loading='lazy'
               className='rounded-2xl'
             ></iframe>
-          )}
-        </div>
+          </div>
+        )}
       </div>
       <div></div>
     </section>

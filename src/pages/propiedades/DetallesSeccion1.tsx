@@ -6,6 +6,8 @@ import Loader from '../../components/Loader'
 const DetallesSeccion1 = ({ item }) => {
   const { data, loading } = useFetch(`/imagenes/${item.id}`)
 
+  const price = Number(item.price).toLocaleString('es-ES')
+
   return (
     <section className='flex flex-col-reverse lg:flex-row gap-12 border-b border-gray pb-12'>
       <div className='lg:w-4/6 flex flex-col gap-y-6 overflow-hidden'>
@@ -16,15 +18,11 @@ const DetallesSeccion1 = ({ item }) => {
         ) : (
           <Slider data={data} />
         )}
-        <div className='text-sm text-gray'>
-          Las imágenes expuestas corresponden a Unidades ya Entregadas. Las unidades se entregan similares a estas
-          condiciones. Las unidades se entregan aptas para ser Rentadas
-        </div>
       </div>
       <div className='lg:w-2/6 flex flex-col gap-y-3 '>
         <div className='flex justify-between items-center px-6 py-3 bg-primary text-white mb-3'>
           <span className='text-sm'>{item.subject}</span>
-          <span className='font-medium text-xl'>USD {item.price}</span>
+          <span className='font-medium text-xl'>USD {price}</span>
         </div>
         <div className='border-b border-gray pb-3'>
           <h1 className='text-primary font-medium text-xl'>{item.city}</h1>

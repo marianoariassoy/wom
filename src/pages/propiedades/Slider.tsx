@@ -16,7 +16,7 @@ const Slider = ({ data }: Props) => {
     autoplay: false,
     transitionDuration: 250,
     indicators: false,
-    arrows: true,
+    arrows: data.length > 1 ? true : false,
     infinite: true,
     pauseOnHover: true,
     prevArrow: (

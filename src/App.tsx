@@ -74,7 +74,7 @@ function App() {
         component={Propiedades}
       />
       <Route
-        path='/propiedades/:id'
+        path='/propiedades/:title/:id'
         component={PropiedadesDetalles}
       />
       <Route component={Error} />
