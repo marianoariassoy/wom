@@ -77,6 +77,18 @@ function App() {
           component={Propiedades}
         />
         <Route
+          path='/propiedades/miami'
+          component={Propiedades}
+        />
+        <Route
+          path='/propiedades/orlando'
+          component={Propiedades}
+        />
+        <Route
+          path='/propiedades/baltimore'
+          component={Propiedades}
+        />
+        <Route
           path='/propiedades/:id/:title'
           component={PropiedadesDetalles}
         />

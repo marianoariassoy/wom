@@ -1,4 +1,5 @@
 import { HeadProvider, Title } from 'react-head'
+import { useLocation } from 'wouter'
 import Layout from '../../layout/Layout'
 import Contacto from '../home/Contacto'
 import Form from './Search'
@@ -9,11 +10,22 @@ import Loader from '../../components/Loader'
 import { useDataContext } from '../../context/useDataContext'
 
 const Index = () => {
+  const [path] = useLocation()
   const { data, loading } = useFetch(`/propiedades`)
-  const { filterCity, filterPrice } = useDataContext()
+  const { filterCity, filterPrice, setFilterCity } = useDataContext()
   let dataFiltered = []
 
   if (data) {
+    if (path === '/propiedades/miami') {
+      setFilterCity('Miami')
+    }
+    if (path === '/propiedades/orlando') {
+      setFilterCity('Orlando')
+    }
+    if (path === '/propiedades/baltimore') {
+      setFilterCity('Baltimore')
+    }
+
     dataFiltered = data.filter(
       item =>
         (item.city.toLowerCase().includes(filterCity.toLowerCase()) || filterCity == '0') &&
