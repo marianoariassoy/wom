@@ -18,18 +18,24 @@ const ItemDestacadas = ({ data: { id, title, description, image, banner } }: Pro
   return (
     <article className='rounded-bl-3xl overflow-hidden relative'>
       {banner && (
-        <div className='absolute -right-14 top-10 bg-secondary text-white font-medium w-full py-3 z-20 text-sm text-center rotate-[30deg] uppercase'>
+        <div
+          className={`absolute -right-14 top-10 text-white font-medium w-full py-3 z-20 text-sm text-center rotate-[30deg] uppercase z-50
+          ${banner === 'Nuevo Lanzamiento' && 'bg-secondary'}
+          ${banner === 'Renta Temporal' && 'bg-primary'}
+          ${banner === 'Últimas Unidades' && 'bg-light'}
+          `}
+        >
           {banner}
         </div>
       )}
 
       <Link href={url}>
-        <a className='absolute w-full h-full top-0 transition-all p-6 flex flex-col justify-end z-30 hover:bg-black/30 hover:backdrop-blur-sm cursor-pointer'>
+        <span className='absolute w-full h-full top-0 transition-all p-6 flex flex-col justify-end z-30 cursor-pointer hover:backdrop-blur-sm'>
           <div className='bg-white p-6 rounded-bl-3xl'>
             <h2 className='text-primary font-bold'>{title}</h2>
             <h2 className='text-black/50 font-medium text-sm uppercase'>{description}</h2>
           </div>
-        </a>
+        </span>
       </Link>
 
       <Image

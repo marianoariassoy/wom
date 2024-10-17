@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { HeadProvider, Title } from 'react-head'
 import Layout from '../../layout/Layout'
 import Menu from './Menu'
@@ -12,10 +11,6 @@ import Image from '../../components/Image'
 
 const OtrosMercados = () => {
   const { data, loading } = useFetch(`/inversiones/otros-mercados`)
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
 
   return (
     <Layout>

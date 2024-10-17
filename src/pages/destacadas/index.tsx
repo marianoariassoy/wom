@@ -10,6 +10,7 @@ import { Pdf } from '../../components/icons'
 import Menu from './Menu'
 import InversionesInfo from '../inversiones/InversionesInfo'
 import Slider from './Slider'
+import HTML from '../../hooks/useHTML'
 
 const Index = () => {
   const [path] = useLocation()
@@ -55,8 +56,8 @@ const Index = () => {
                 </div>
 
                 {data[0].bajada && (
-                  <div>
-                    <p className='font-bold text-gray whitespace-break-spaces'>{data[0].bajada}</p>
+                  <div className='text-gray'>
+                    <HTML text={data[0].bajada} />
                   </div>
                 )}
 

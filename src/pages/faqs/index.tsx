@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { HeadProvider, Title } from 'react-head'
 import Layout from '../../layout/Layout'
 import { SocaloBottom } from '../../ui'
@@ -10,10 +9,6 @@ import Loader from '../../components/Loader'
 
 const Index = () => {
   const { data, loading } = useFetch(`/faqs`)
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
 
   return (
     <Layout>

@@ -6,7 +6,7 @@ import { sanitizeTitleForURL } from '../../utils'
 
 const Item = ({ data }) => {
   const price = Number(data.price).toLocaleString('es-ES')
-  const url = `/propiedades/${sanitizeTitleForURL(data.location)}/${data.id}`
+  const url = `/propiedades/${data.id}/${sanitizeTitleForURL(data.location)}`
 
   return (
     <article className='flex flex-col shadow-lg rounded-bl-3xl overflow-hidden relative fade-in-fast'>
@@ -39,11 +39,21 @@ const Item = ({ data }) => {
           </Link>
         </div>
       </div>
-      {+data.alert && (
+      {data.alert && (
         <div
-          className={`absolute w-full top-12 lg:top-10 -right-20 lg:-right-16 font-bold text-xs p-3 text-white z-30 text-center rotate-[30deg] uppercase ${
-            data.alert < 3 ? 'bg-secondary' : data.alert < 7 ? 'bg-light' : 'bg-primary'
-          }`}
+          className={`absolute w-full top-12 lg:top-10 -right-20 lg:-right-16 font-bold text-xs p-3 text-white z-30 text-center rotate-[30deg] uppercase 
+            ${data.alert === 1 && 'bg-white text-primary'}
+            ${data.alert === 2 && 'bg-white text-primary'}
+            ${data.alert === 3 && 'bg-secondary'}
+            ${data.alert === 4 && 'bg-light'}
+            ${data.alert === 5 && 'bg-light'}
+            ${data.alert === 6 && 'bg-light'}
+            ${data.alert === 7 && 'bg-primary'}
+            ${data.alert === 8 && 'bg-primary'}
+            ${data.alert === 9 && 'bg-primary'}
+            ${data.alert === 10 && 'bg-primary'}
+            ${data.alert === 11 && 'bg-primary'}
+          `}
         >
           {alertsMore[data.alert]}
         </div>
@@ -53,3 +63,6 @@ const Item = ({ data }) => {
 }
 
 export default Item
+
+// bg-secondary
+// bg-light

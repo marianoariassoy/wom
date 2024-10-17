@@ -2,8 +2,8 @@ import { Pdf } from '../../components/icons'
 import HTML from '../../hooks/useHTML'
 
 const DetallesSeccion2 = ({ item }) => {
-  const rentyear = Number(item.rentyear).toLocaleString('es-ES') || 0
-  const rentmonth = Number(item.rentmonth).toLocaleString('es-ES') || 0
+  // const rentyear = Number(item.rentyear).toLocaleString('es-ES') || 0
+  // const rentmonth = Number(item.rentmonth).toLocaleString('es-ES') || 0
 
   return (
     <section className='flex flex-col lg:flex-row gap-12 py-12 border-b border-gray'>
@@ -52,7 +52,7 @@ const DetallesSeccion2 = ({ item }) => {
               <br />
               ANUAL
             </h3>
-            <span className='font-bold text-2xl'>{rentyear}</span>
+            <span className='font-bold text-2xl'>{item.rentyear}</span>
           </article>
         )}
         {item.rentmonth && (
@@ -62,7 +62,7 @@ const DetallesSeccion2 = ({ item }) => {
               <br />
               MENSUAL
             </h3>
-            <span className='font-bold text-2xl'>{rentmonth}</span>
+            <span className='font-bold text-2xl'>{item.rentmonth}</span>
           </article>
         )}
       </div>

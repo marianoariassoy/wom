@@ -26,7 +26,6 @@ const Index = () => {
   }
   useEffect(() => {
     setLoading(true)
-    window.scrollTo(0, 0)
   }, [path, setLoading])
 
   return (

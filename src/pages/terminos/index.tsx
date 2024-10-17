@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { HeadProvider, Title } from 'react-head'
 import Layout from '../../layout/Layout'
 import { SocaloBottom } from '../../ui'
@@ -7,10 +6,6 @@ import Contacto from '../home/Contacto'
 import Newsletter from '../home/Newsletter'
 
 const Index = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
   return (
     <Layout>
       <section className='mt-20'>

@@ -1,6 +1,5 @@
-import { useEffect } from 'react'
-import Layout from '../../layout/Layout'
 import { HeadProvider, Title } from 'react-head'
+import Layout from '../../layout/Layout'
 import Contacto from '../home/Contacto'
 import Form from './Search'
 import Item from './Item'
@@ -22,10 +21,6 @@ const Index = () => {
     )
   }
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
   return (
     <Layout>
       <section className='mt-20 fade-in'>
@@ -46,7 +41,7 @@ const Index = () => {
             </div>
           )}
           {!loading && dataFiltered.length === 0 && (
-            <div className='text-center font-medium'>No se encontraron propiedades.</div>
+            <div className='text-center font-medium'>En breve tendremos nuevas opciones de inversión.</div>
           )}
           <div className='mt-20'>
             <SocaloBottom color='bg-primary'> </SocaloBottom>

@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { Link, useParams } from 'wouter'
 import { HeadProvider, Title } from 'react-head'
 import Layout from '../../layout/Layout'
@@ -13,10 +12,6 @@ import Loader from '../../components/Loader'
 const Detalle = () => {
   const { id } = useParams()
   const { data, loading } = useFetch(`/propiedades/${id}`)
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
 
   return (
     <Layout>
