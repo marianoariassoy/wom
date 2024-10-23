@@ -35,7 +35,7 @@ export const amount = [
   },
   {
     title: 'Más de 600.000',
-    value: 6000000
+    value: 800000
   }
 ]
 

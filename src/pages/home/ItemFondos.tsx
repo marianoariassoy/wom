@@ -4,8 +4,8 @@ import { inversion } from '../../data'
 import { sanitizeTitleForURL } from '../../utils'
 
 const ItemIversiones = ({ data }) => {
-  const url1 = '/renta-variable/' + sanitizeTitleForURL(data[0].title) + '/' + data[0].id
-  const url2 = '/renta-fija/' + sanitizeTitleForURL(data[1].title) + '/' + data[1].id
+  const url1 = '/renta-variable/' + data[0].id + '/' + sanitizeTitleForURL(data[0].title)
+  const url2 = '/renta-fija/' + data[1].id + '/' + sanitizeTitleForURL(data[1].title)
 
   return (
     <article className='grid lg:grid-cols-2 rounded-bl-3xl overflow-hidden shadow-main lg:h-[300px] gap-3'>

@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { HeadProvider, Title } from 'react-head'
-import { useLocation } from 'wouter'
+import { useParams } from 'wouter'
 import Layout from '../../layout/Layout'
 import Contacto from '../home/Contacto'
 import { SocaloBottom } from '../../ui'
@@ -13,8 +13,8 @@ import Slider from './Slider'
 import HTML from '../../hooks/useHTML'
 
 const Index = () => {
-  const [path] = useLocation()
-  const id = path.split('/')[3]
+  const id = useParams().id
+
   const { data, loading } = useFetch(`/destacadas/${id}`)
   let title = ''
 

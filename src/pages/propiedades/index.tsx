@@ -26,11 +26,18 @@ const Index = () => {
       setFilterCity('Baltimore')
     }
 
-    dataFiltered = data.filter(
-      item =>
-        (item.city.toLowerCase().includes(filterCity.toLowerCase()) || filterCity == '0') &&
-        (item.price <= filterPrice || filterPrice == 0)
-    )
+    if (filterPrice === '800000') {
+      dataFiltered = data.filter(
+        item =>
+          (item.city.toLowerCase().includes(filterCity.toLowerCase()) || filterCity == '0') && item.price >= 600000
+      )
+    } else {
+      dataFiltered = data.filter(
+        item =>
+          (item.city.toLowerCase().includes(filterCity.toLowerCase()) || filterCity == '0') &&
+          (item.price <= filterPrice || filterPrice == 0)
+      )
+    }
   }
 
   return (

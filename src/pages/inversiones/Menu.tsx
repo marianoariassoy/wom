@@ -17,7 +17,7 @@ const Menu = () => {
             .filter(item => +item.type === 1)
             .map((data, index) => (
               <Link
-                href={`/renta-variable/${sanitizeTitleForURL(data.title)}/${data.id}`}
+                href={`/renta-variable/${data.id}/${sanitizeTitleForURL(data.title)}`}
                 key={index}
               >
                 <a className={`${data.id === +path.split('/')[3] && 'text-secondary'} text-secondary-hover`}>
@@ -39,7 +39,7 @@ const Menu = () => {
             .filter(item => +item.type === 2)
             .map((data, index) => (
               <Link
-                href={`/renta-fija/${sanitizeTitleForURL(data.title)}/${data.id}`}
+                href={`/renta-fija/${data.id}/${sanitizeTitleForURL(data.title)}`}
                 key={index}
               >
                 <a className={`${data.id === +path.split('/')[3] && 'text-light'} text-light-hover`}>{data.title}</a>

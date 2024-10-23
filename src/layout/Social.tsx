@@ -18,7 +18,7 @@ const items = [
   },
   {
     name: 'Twitter',
-    url: 'https://twitter.com/#!/WomLatam',
+    url: 'https://x.com/WomLatam',
     icon: Twitter
   }
 ]

@@ -13,8 +13,9 @@ import Image from '../../components/Image'
 
 const Index = () => {
   const [path] = useLocation()
-  const titleUrl = path.split('/')[2]
-  const id = path.split('/')[3]
+  const id = path.split('/')[2]
+  const titleUrl = path.split('/')[3]
+
   const { data, loading, setLoading } = useFetch(`/inversiones/${titleUrl}`)
   const color = path.split('/')[1] === 'renta-variable' ? 'text-secondary' : 'text-light'
   let title = 'Inversiones'

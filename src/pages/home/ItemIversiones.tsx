@@ -15,7 +15,7 @@ interface Props {
 }
 
 const ItemIversiones = ({ data: { id, title, type, rentability, from, image } }: Props) => {
-  const url = `${type === 1 ? '/renta-variable' : '/renta-fija'}/${sanitizeTitleForURL(title)}/${id}`
+  const url = `${type === 1 ? '/renta-variable' : '/renta-fija'}/${id}/${sanitizeTitleForURL(title)}`
 
   return (
     <article className='grid grid-cols-2 rounded-bl-3xl overflow-hidden shadow-lg lg:h-[300px] gap-x-3'>

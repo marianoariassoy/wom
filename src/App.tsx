@@ -41,7 +41,7 @@ function App() {
           component={Home}
         />
         <Route
-          path='/renta-variable/:title/:id'
+          path='/renta-variable/:id/:title'
           component={Inversiones}
         />
         <Route
@@ -49,11 +49,11 @@ function App() {
           component={OtrosMercados}
         />
         <Route
-          path='/renta-fija/:title/:id'
+          path='/renta-fija/:id/:title'
           component={Inversiones}
         />
         <Route
-          path='/inversiones-destacadas/:title/:id'
+          path='/inversiones-destacadas/:id/:title'
           component={Destacadas}
         />
         <Route

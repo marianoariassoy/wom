@@ -2,7 +2,7 @@ import { Link, useLocation } from 'wouter'
 import { sanitizeTitleForURL } from '../../utils'
 
 const ItemMenu = ({ data }) => {
-  const url = `/inversiones-destacadas/${sanitizeTitleForURL(data.title)}/${data.id}`
+  const url = `/inversiones-destacadas/${data.id}/${sanitizeTitleForURL(data.title)}`
   const [location] = useLocation()
 
   return (

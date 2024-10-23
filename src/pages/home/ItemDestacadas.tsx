@@ -13,13 +13,13 @@ interface Props {
 }
 
 const ItemDestacadas = ({ data: { id, title, description, image, banner } }: Props) => {
-  const url = `/inversiones-destacadas/${sanitizeTitleForURL(title)}/${id}`
+  const url = `/inversiones-destacadas/${id}/${sanitizeTitleForURL(title)}`
 
   return (
     <article className='rounded-bl-3xl overflow-hidden relative'>
       {banner && (
         <div
-          className={`absolute -right-14 top-10 text-white font-medium w-full py-3 z-20 text-sm text-center rotate-[30deg] uppercase z-50
+          className={`absolute -right-14 top-10 text-white font-medium w-full py-3 text-sm text-center rotate-[30deg] uppercase z-50
           ${banner === 'Nuevo Lanzamiento' && 'bg-secondary'}
           ${banner === 'Renta Temporal' && 'bg-primary'}
           ${banner === 'Últimas Unidades' && 'bg-light'}

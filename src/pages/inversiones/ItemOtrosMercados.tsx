@@ -4,7 +4,7 @@ import Loader from '../../components/Loader'
 import ItemInfo from './ItemInfo'
 
 const ItemOtrosMercados = ({ data: { id, title } }) => {
-  const { data, loading } = useFetch(`/inversiones/info/${id}`)
+  const { data, loading } = useFetch(`/inversiones/${id}/info`)
 
   return (
     <article className="className='flex flex-col gap-6'">
