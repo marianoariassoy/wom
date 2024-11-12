@@ -23,10 +23,13 @@ const Detalle = () => {
         <section className='mt-20 fade-in'>
           <div className='mx-auto max-w-6xl px-6'>
             <Search />
-            <DetallesSeccion1 item={data[0]} />
-            <DetallesSeccion2 item={data[0]} />
+            <div className='flex flex-col-reverse lg:flex-col'>
+              <DetallesSeccion1 item={data[0]} />
+              <DetallesSeccion2 item={data[0]} />
+            </div>
+
             <DetallesSeccion3 item={data[0]} />
-            <div className='flex justify-center my-20'>
+            <div className='flex justify-center my-12'>
               <Link
                 to='/propiedades'
                 className='text-white bg-secondary font-medium transition-all px-14 hover:bg-black rounded-2xl h-14 text-sm justify-center flex items-center'

@@ -34,7 +34,7 @@ const Destacadas = () => {
                 />
               ))}
             </div>
-            <div className='flex justify-center items-start'>
+            <div className='flex justify-center items-start mb-8'>
               {show < data.length && (
                 <div onClick={() => setShow(show + 6)}>
                   <Button color='bg-secondary'>Más inversiones</Button>

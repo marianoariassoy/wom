@@ -41,18 +41,18 @@ const Item = ({ data }) => {
       </div>
       {data.alert && (
         <div
-          className={`absolute w-full top-12 lg:top-10 -right-20 lg:-right-16 font-bold text-xs p-3 text-white z-30 text-center rotate-[30deg] uppercase 
-            ${data.alert === 1 && 'bg-white text-primary'}
-            ${data.alert === 2 && 'bg-white text-primary'}
-            ${data.alert === 3 && 'bg-secondary'}
-            ${data.alert === 4 && 'bg-light'}
-            ${data.alert === 5 && 'bg-light'}
-            ${data.alert === 6 && 'bg-light'}
-            ${data.alert === 7 && 'bg-primary'}
-            ${data.alert === 8 && 'bg-primary'}
-            ${data.alert === 9 && 'bg-primary'}
-            ${data.alert === 10 && 'bg-primary'}
-            ${data.alert === 11 && 'bg-primary'}
+          className={`absolute w-full top-12 lg:top-10 -right-20 lg:-right-16 font-bold text-xs p-3  z-30 text-center rotate-[30deg] uppercase 
+            ${data.alert === 1 && 'bg-white text-secondary'}
+            ${data.alert === 2 && 'bg-white text-secondary'}
+            ${data.alert === 3 && 'bg-secondary text-white'}
+            ${data.alert === 4 && 'bg-light text-white'}
+            ${data.alert === 5 && 'bg-light text-white'}
+            ${data.alert === 6 && 'bg-light text-white'}
+            ${data.alert === 7 && 'bg-primary text-white'}
+            ${data.alert === 8 && 'bg-primary text-white'}
+            ${data.alert === 9 && 'bg-primary text-white'}
+            ${data.alert === 10 && 'bg-primary text-white'}
+            ${data.alert === 11 && 'bg-primary text-white'}
           `}
         >
           {alertsMore[data.alert]}

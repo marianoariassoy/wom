@@ -19,12 +19,12 @@ const DetallesSeccion1 = ({ item }) => {
           <Slider data={data} />
         )}
       </div>
-      <div className='lg:w-2/6 flex flex-col gap-y-3 '>
+      <div className='lg:w-2/6 flex  flex-col gap-y-3'>
         <div className='flex justify-between items-center px-6 py-3 bg-primary text-white mb-3'>
           <span className='text-sm'>{item.subject}</span>
           <span className='font-medium text-xl'>USD {price}</span>
         </div>
-        <div className='border-b border-gray pb-3'>
+        <div className='border-b border-gray pb-3  hidden lg:block'>
           <h1 className='text-primary font-medium text-xl'>{item.city}</h1>
           <h2 className='text-xl'>{item.location}</h2>
         </div>

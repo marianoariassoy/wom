@@ -6,7 +6,7 @@ const DetallesSeccion2 = ({ item }) => {
   // const rentmonth = Number(item.rentmonth).toLocaleString('es-ES') || 0
 
   return (
-    <section className='flex flex-col lg:flex-row gap-12 py-12 border-b border-gray'>
+    <section className='flex flex-col lg:flex-row gap-12 lg:py-12 border-b border-gray'>
       <div className='lg:w-4/6 flex flex-col gap-y-6 lg:gap-y-12'>
         <div className='text-xl'>
           <span className='text-primary font-medium'>{item.city} | </span>
